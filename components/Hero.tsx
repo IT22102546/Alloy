@@ -27,7 +27,7 @@ export default function Hero() {
           }
         }}
       >
-        <source src="/assets/video.mp4" type="video/mp4" />
+        <source src="./assets/video.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-gradient-to-b from-[rgba(24,24,24,0.2)] to-[rgba(24,24,24,0.7)] z-0" />
