@@ -14,7 +14,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen relative overflow-hidden flex items-center justify-center text-center">
+    <section className="min-h-screen relative overflow-hidden flex items-center justify-center text-center pt-28">
       <video
         ref={videoRef}
         autoPlay
