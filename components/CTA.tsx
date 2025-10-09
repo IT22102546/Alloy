@@ -185,7 +185,7 @@ export default function CTA() {
               Location
             </h3>
             <div className="flex flex-col gap-[18px]">
-              <p className="text-xl font-bold text-cream mb-2">Peradeniya Road, Kandy</p>
+              <p className="text-xl font-bold text-cream mb-2">No.806, Peradeniya Road, Kandy</p>
               <p className="text-cream leading-[1.5] opacity-90">
                 Between Mahaweli River & Hanthana Mountains
               </p>
@@ -210,9 +210,9 @@ export default function CTA() {
             </h3>
             <div className="flex flex-col gap-[22px]">
               {[
-                { icon: 'phone', type: 'Reservations', value: '+94 77 123 4567', href: 'tel:+94771234567' },
-                { icon: 'email', type: 'Email', value: 'reservations@aloyrestaurant.com', href: 'mailto:reservations@aloyrestaurant.com' },
-                { icon: 'chat', type: 'WhatsApp', value: '+94 77 123 4567', href: '#' }
+                { icon: 'phone', type: 'Reservations', value: '+94 71 605 4729', href: 'tel:+94716054729' },
+                { icon: 'email', type: 'Email', value: 'aloyrestaurant@gmail.com', href: 'mailto:loyrestaurant@gmail.com' },
+                { icon: 'chat', type: 'WhatsApp', value: '+94 71 605 4729', href: 'https://wa.me/94716054729'}
               ].map((contact, index) => (
                 <div key={index} className="flex items-center gap-[18px] py-[15px] border-b border-white/20 last:border-b-0">
                   {contact.icon === 'phone' && (
