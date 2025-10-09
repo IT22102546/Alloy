@@ -1,13 +1,14 @@
+// components/sections/footer.tsx
 export default function Footer() {
   return (
     <footer className="bg-[#111] py-20 pb-[30px]">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-[50px]">
           <div>
-            <h3 className="font-playfair text-xl mb-[25px] relative pb-[10px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-gold">
+            <h3 className="font-playfair text-xl mb-[25px] relative pb-[10px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-gold text-cream">
               Aloy Restaurant
             </h3>
-            <p className="text-muted-foreground mb-5">
+            <p className="text-cream/80 mb-5">
               We serve warm hospitality and memorable dishes — join us for a meal by the river in the heart of Kandy.
             </p>
             <div className="flex gap-[15px]">
@@ -20,7 +21,7 @@ export default function Footer() {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center transition-all duration-300 hover:bg-gold hover:text-[#111] hover:-translate-y-[3px]"
+                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center transition-all duration-300 hover:bg-gold hover:text-[#111] hover:-translate-y-[3px] text-cream"
                 >
                   {social.icon === 'facebook' && (
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -48,7 +49,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-playfair text-xl mb-[25px] relative pb-[10px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-gold">
+            <h3 className="font-playfair text-xl mb-[25px] relative pb-[10px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-gold text-cream">
               Contact Info
             </h3>
             <ul className="list-none">
@@ -59,7 +60,7 @@ export default function Footer() {
                 { icon: 'globe', text: 'www.aloyrestaurant.com', href: '#' }
               ].map((item, index) => (
                 <li key={index} className="mb-3">
-                  <a href={item.href} className="text-muted-foreground transition-all duration-300 flex items-center gap-[10px] hover:text-gold hover:pl-[5px]">
+                  <a href={item.href} className="text-cream/80 transition-all duration-300 flex items-center gap-[10px] hover:text-gold hover:pl-[5px]">
                     {item.icon === 'location' && (
                       <svg className="w-3 h-3 text-gold" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
@@ -88,7 +89,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-playfair text-xl mb-[25px] relative pb-[10px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-gold">
+            <h3 className="font-playfair text-xl mb-[25px] relative pb-[10px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-gold text-cream">
               Opening Hours
             </h3>
             <ul className="list-none">
@@ -99,7 +100,7 @@ export default function Footer() {
                 { day: 'Lunch Service', time: '11:30 - 15:00' },
                 { day: 'Dinner Service', time: '18:00 - 22:30' }
               ].map((schedule, index) => (
-                <li key={index} className="flex justify-between py-2 border-b border-white/5 text-muted-foreground last:border-b-0">
+                <li key={index} className="flex justify-between py-2 border-b border-white/5 text-cream/80 last:border-b-0">
                   <span className="font-medium">{schedule.day}</span>
                   <span>{schedule.time}</span>
                 </li>
@@ -108,7 +109,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-playfair text-xl mb-[25px] relative pb-[10px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-gold">
+            <h3 className="font-playfair text-xl mb-[25px] relative pb-[10px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-[2px] after:bg-gold text-cream">
               Quick Links
             </h3>
             <ul className="list-none">
@@ -121,7 +122,7 @@ export default function Footer() {
                 { text: 'Reservations', href: '#reservations' }
               ].map((link, index) => (
                 <li key={index} className="mb-3">
-                  <a href={link.href} className="text-muted-foreground transition-all duration-300 flex items-center gap-[10px] hover:text-gold hover:pl-[5px]">
+                  <a href={link.href} className="text-cream/80 transition-all duration-300 flex items-center gap-[10px] hover:text-gold hover:pl-[5px]">
                     <svg className="w-3 h-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -133,7 +134,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="text-center pt-[30px] border-t border-white/5 text-muted-foreground text-sm">
+        <div className="text-center pt-[30px] border-t border-white/5 text-cream/80 text-sm">
           <p>
             &copy; 2023 Aloy Restaurant. All Rights Reserved. | Designed with{' '}
             <svg className="inline w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20">

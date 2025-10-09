@@ -1,3 +1,4 @@
+// components/sections/menu-experience.tsx
 'use client';
 
 import { useEffect, useRef } from 'react';
@@ -70,10 +71,10 @@ export default function MenuExperience() {
           <p className="fade-in text-base text-gold uppercase tracking-[2px] mb-[10px]">
             Our Dining Experiences
           </p>
-          <h2 className="fade-in font-playfair text-[42px] mb-5">
+          <h2 className="fade-in font-playfair text-[42px] mb-5 text-cream">
             À la carte • Set Menu • Fine Dining
           </h2>
-          <p className="fade-in text-muted-foreground max-w-[600px] mx-auto">
+          <p className="fade-in text-cream/80 max-w-[600px] mx-auto">
             Choose an experience. Each menu tells a different story of culinary excellence.
           </p>
         </div>
@@ -94,11 +95,11 @@ export default function MenuExperience() {
                 <span className="inline-block bg-gold text-[#111] px-3 py-[6px] rounded-[20px] text-xs font-semibold mb-[15px]">
                   {exp.badge}
                 </span>
-                <h3 className="font-playfair text-2xl mb-3">{exp.title}</h3>
-                <p className="text-muted-foreground mb-5">{exp.description}</p>
+                <h3 className="font-playfair text-2xl mb-3 text-cream">{exp.title}</h3>
+                <p className="text-cream/80 mb-5">{exp.description}</p>
                 <ul className="list-none mb-5">
                   {exp.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 mb-2 text-muted-foreground text-sm">
+                    <li key={idx} className="flex items-center gap-2 mb-2 text-cream/80 text-sm">
                       <svg className="w-3 h-3 text-gold" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
