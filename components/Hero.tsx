@@ -1,3 +1,4 @@
+// components/sections/hero.tsx
 'use client';
 
 import { useEffect, useRef } from 'react';
@@ -37,10 +38,10 @@ export default function Hero() {
           Riverside Dining • Scenic Views
         </p>
         <h1 className="fade-in delay-1 font-playfair text-6xl mb-6 leading-[1.1]">
-          Culinary Excellence Meets Authentic Tradition
+          Culinary experience rooted in Western and Authentic tradition and scenic beauty in the heart of Kandy
         </h1>
         <p className="fade-in delay-2 text-xl text-cream mb-10 max-w-[700px] mx-auto">
-          Nestled between the Mahaweli River and the Hanthana hills, Aloy Restaurant offers a unique dining experience with seasonal ingredients, warm hospitality, and dishes that tell a story.
+          To be Sri Lanka's most cherished culinary destination for international travelers, offering Western cuisine and authentic local flavors with world-class hospitality.
         </p>
         <div className="fade-in delay-3 flex gap-4 justify-center mb-10 flex-wrap">
           <a href="#menu" className="bg-gold text-[#111] px-6 py-3 rounded-[10px] font-semibold border-none cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(182,147,91,0.3)] hover:bg-hover hover:-translate-y-[3px] hover:shadow-[0_6px_18px_rgba(182,147,91,0.4)]">
@@ -61,7 +62,7 @@ export default function Hero() {
             <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            <span>Travelers&apos; Choice 2023</span>
+            <span>Travelers' Choice 2023</span>
           </div>
           <div className="flex items-center gap-[10px] text-muted-foreground">
             <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">

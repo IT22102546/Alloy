@@ -1,3 +1,4 @@
+// components/sections/why-aloy.tsx
 'use client';
 
 import { useEffect, useRef } from 'react';
@@ -72,21 +73,21 @@ export default function WhyAloy() {
           <div className="fade-in pr-0 lg:pr-[30px]">
             <p className="text-base text-gold uppercase tracking-[2px] mb-[10px]">Our Story</p>
             <h2 className="font-playfair text-[42px] mb-[30px] text-left">Why Aloy Restaurant</h2>
-            <p className="mb-8">
-              Placed between the whispering waters of the Mahaweli River and the emerald folds of the Hanthana range, Aloy is a sanctuary of taste and tradition. Each dish is crafted with spices that tell stories and ingredients that echo the island&apos;s bounty.
+            <p className="mb-8 text-cream leading-relaxed">
+             Aloy Restaurant in Kandy, Sri Lanka, offers more than just a meal—it’s a culinary experience rooted in tradition and scenic beauty Aloy Restaurant introduce Western to authentic Sri Lankan traditional cuisine to international food lovers seeking new taste sensations. Located  to boast a picturesque setting that enhances the dining experience. Guests often enjoy cocktails, mocktails, and fresh fruit juices while soaking in the serene views Nestled along Peradeniya Road, it overlooks the lush Hanthana Mountain range, offering diners a glamorous view of the world heritage city of Kandy.
             </p>
             <ul className="list-none mt-[30px]">
               {whyPoints.map((point, index) => (
                 <li key={index} className="flex items-start gap-[15px] mb-5">
                   <div className="text-gold text-xl mt-[5px]">{point.icon}</div>
                   <div>
-                    <h4 className="mb-[5px]">{point.title}</h4>
-                    <p className="text-muted-foreground">{point.description}</p>
+                    <h4 className="mb-[5px] text-cream font-semibold">{point.title}</h4>
+                    <p className="text-cream/80">{point.description}</p>
                   </div>
                 </li>
               ))}
             </ul>
-            <a href="#about" className="inline-block mt-6 bg-gold text-[#111] px-6 py-3 rounded-[10px] font-semibold transition-all duration-300 shadow-[0_4px_12px_rgba(182,147,91,0.3)] hover:bg-hover hover:-translate-y-[3px] hover:shadow-[0_6px_18px_rgba(182,147,91,0.4)]">
+            <a href="#story" className="inline-block mt-6 bg-gold text-[#111] px-6 py-3 rounded-[10px] font-semibold transition-all duration-300 shadow-[0_4px_12px_rgba(182,147,91,0.3)] hover:bg-hover hover:-translate-y-[3px] hover:shadow-[0_6px_18px_rgba(182,147,91,0.4)]">
               Our Story
             </a>
           </div>

@@ -1,3 +1,4 @@
+// components/sections/experiences.tsx
 'use client';
 
 import { useEffect, useRef } from 'react';
@@ -118,8 +119,8 @@ export default function Experiences() {
           <p className="fade-in text-base text-gold uppercase tracking-[2px] mb-[10px]">
             Unique Experiences
           </p>
-          <h2 className="fade-in font-playfair text-[42px] mb-5">Special Experiences</h2>
-          <p className="fade-in text-muted-foreground max-w-[600px] mx-auto">
+          <h2 className="fade-in font-playfair text-[42px] mb-5 text-cream">Special Experiences</h2>
+          <p className="fade-in text-cream/80 max-w-[600px] mx-auto">
             Perfect for travelers and local guests alike, our curated experiences create lasting memories.
           </p>
         </div>
@@ -142,11 +143,11 @@ export default function Experiences() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-playfair text-xl mb-[10px]">{item.title}</h3>
-                  <p className="text-muted-foreground mb-5">{item.description}</p>
+                  <h3 className="font-playfair text-xl mb-[10px] text-cream">{item.title}</h3>
+                  <p className="text-cream/80 mb-5">{item.description}</p>
                   <div className="flex justify-between border-t border-white/5 pt-[15px]">
                     {item.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-[5px] text-muted-foreground text-sm">
+                      <div key={idx} className="flex items-center gap-[5px] text-cream/80 text-sm">
                         <span className="text-gold">{icons[feature.icon as keyof typeof icons]}</span>
                         {feature.text}
                       </div>

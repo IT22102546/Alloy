@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,11 +20,18 @@ export default function Header() {
       <div className="max-w-[1200px] w-full px-6">
         <div className="flex items-center justify-between gap-[18px] w-full py-3 px-6 rounded-xl bg-black/40 backdrop-blur-[6px] border border-white/8 transition-all duration-300">
           <div className="flex items-center gap-3">
-            <div className="w-[50px] h-[50px] rounded-[10px] bg-gold grid place-items-center text-[#111] font-bold font-playfair text-2xl shadow-[0_4px_12px_rgba(182,147,91,0.3)]">
-              A
+            <div className="w-[58px] h-[68px] rounded-[10px] bg-white grid place-items-center overflow-hidden shadow-[0_4px_12px_rgba(182,147,91,0.3)]">
+              <Image 
+                src="./assets/logo.jpg" 
+                alt="Aloy Restaurant Logo"
+                width={15}
+                height={15}
+                className="w-16 h-18 object-cover"
+                priority
+              />
             </div>
             <div>
-              <div className="font-semibold">Aloy Restaurant</div>
+              <div className="font-semibold text-cream">Aloy Restaurant</div>
               <div className="text-xs text-muted-foreground">Kandy • Since 2012</div>
             </div>
           </div>
