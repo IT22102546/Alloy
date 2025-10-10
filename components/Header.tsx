@@ -39,7 +39,7 @@ export default function Header() {
             <a href="#menu" className="text-cream font-medium transition-all duration-300 relative py-2 hover:text-gold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-[width] after:duration-300 hover:after:w-full">
               Menu
             </a>
-            <a href="#about" className="text-cream font-medium transition-all duration-300 relative py-2 hover:text-gold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-[width] after:duration-300 hover:after:w-full">
+            <a href="/about" className="text-cream font-medium transition-all duration-300 relative py-2 hover:text-gold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-[width] after:duration-300 hover:after:w-full">
               About
             </a>
             <a href="#experiences" className="text-cream font-medium transition-all duration-300 relative py-2 hover:text-gold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-[width] after:duration-300 hover:after:w-full">
