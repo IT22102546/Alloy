@@ -14,8 +14,9 @@ export default function Home() {
       <Hero />
       <MenuExperience />
       <WhyAloy />
-      <VisionMission/>
       <Experiences />
+      <VisionMission/>
+      
       <CTA />
       <Footer />
     </main>
