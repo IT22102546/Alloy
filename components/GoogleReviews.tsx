@@ -149,7 +149,7 @@ export default function GoogleReviews() {
 
             <div className="mt-6 md:mt-0">
               <a
-                href="https://g.page/r/Cgw9example/review"
+                href="https://www.google.com/search?q=aloy+restaurant+kandy&rlz=1C1GCEU_enLK1120LK1121&oq=aloy+res&gs_lcrp=EgZjaHJvbWUqDwgAECMYJxjjAhiABBiKBTIPCAAQIxgnGOMCGIAEGIoFMhIIARAuGCcYrwEYxwEYgAQYigUyBggCEEUYOTIGCAMQRRg7MgkIBBAAGAoYgAQyCQgFEAAYChiABDIJCAYQABgKGIAEMgkIBxAAGAoYgAQyCQgIEAAYChiABDIJCAkQABgKGIAE0gEJNTI4M2owajE1qAIIsAIB8QUMTLMqY3hWk_EFDEyzKmN4VpM&sourceid=chrome&ie=UTF-8#lrd=0x3ae368c1a7f465db:0x9303b519c0562657,1,,,,"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#B6935B] text-[#111] px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:bg-[#E3C785] hover:-translate-y-1 hover:shadow-xl flex items-center gap-2"

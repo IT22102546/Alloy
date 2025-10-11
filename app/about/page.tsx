@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import VisionMission from '@/components/vision-mission';
+import CredibilityBanner from '@/components/CredibilityBanner';
 
 export default function About() {
   const [scrolled, setScrolled] = useState(false);
@@ -391,7 +392,7 @@ fresh juices, their senses awakened by the symphony of flavors and the serenity 
 
       {/* Mission, Vision & Values */}
       <VisionMission/>
-
+      <CredibilityBanner/>
       <Footer />
     </main>
   );
