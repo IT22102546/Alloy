@@ -251,15 +251,15 @@ export default function Contact() {
                     <i className="fas fa-phone text-[#B6935B] mt-1 text-lg"></i>
                     <p className="text-[#B0B0B0]">
                       <a href="tel:+94771234567" className="hover:text-[#B6935B] transition-colors duration-300">
-                        +94 77 123 4567
+                        +94 71 605 4729
                       </a>
                     </p>
                   </div>
                   <div className="flex items-start gap-4 p-3 rounded-lg transition-all duration-300 hover:bg-white/5">
                     <i className="fas fa-envelope text-[#B6935B] mt-1 text-lg"></i>
                     <p className="text-[#B0B0B0]">
-                      <a href="mailto:info@aloyrestaurant.com" className="hover:text-[#B6935B] transition-colors duration-300">
-                        info@aloyrestaurant.com
+                      <a href="mailto:aloyrestaurant@gmail.com" className="hover:text-[#B6935B] transition-colors duration-300">
+                        aloyrestaurant@gmail.com
                       </a>
                     </p>
                   </div>
@@ -326,13 +326,13 @@ export default function Contact() {
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-4 p-3 rounded-lg transition-all duration-300 hover:bg-white/5">
                     <i className="fas fa-map-marker-alt text-[#B6935B] mt-1 text-lg"></i>
-                    <p className="text-[#B0B0B0]">Peradeniya Road, Kandy, Sri Lanka</p>
+                    <p className="text-[#B0B0B0]">No.806, Peradeniya Road, Kandy, Sri Lanka</p>
                   </div>
                   <div className="flex items-start gap-4 p-3 rounded-lg transition-all duration-300 hover:bg-white/5">
                     <i className="fas fa-phone text-[#B6935B] mt-1 text-lg"></i>
                     <p className="text-[#B0B0B0]">
                       <a href="tel:+94771234567" className="hover:text-[#B6935B] transition-colors duration-300">
-                        +94 77 123 4567
+                       +94 71 605 4729
                       </a>
                     </p>
                   </div>
