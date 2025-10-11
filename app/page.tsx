@@ -6,6 +6,7 @@ import Experiences from '@/components/Experiences';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import VisionMission from '@/components/vision-mission';
+import GoogleReviews from '@/components/GoogleReviews';
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <WhyAloy />
       <Experiences />
       <VisionMission/>
-      
+      <GoogleReviews/>
       <CTA />
       <Footer />
     </main>
