@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,48 +16,157 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const navigationItems = [
+    { href: "/", label: "Home" },
+    { href: "#menu", label: "Menu" },
+    { href: "/about", label: "About" },
+    { href: "#experiences", label: "Experiences" },
+    { href: "#gallery", label: "Gallery" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
-    <header className={`fixed left-0 right-0 top-0 z-[1000] flex justify-center transition-all duration-400 ${scrolled ? 'bg-black/90 backdrop-blur-[10px] py-3 shadow-[0_5px_20px_rgba(0,0,0,0.2)]' : 'py-5'}`}>
-      <div className="max-w-[1200px] w-full px-6">
-        <div className="flex items-center justify-between gap-[18px] w-full py-3 px-6 rounded-xl bg-black/40 backdrop-blur-[6px] border border-white/8 transition-all duration-300">
-          <div className="flex items-center gap-3">
-            <div className="w-[58px] h-[68px] rounded-[10px] bg-white grid place-items-center overflow-hidden shadow-[0_4px_12px_rgba(182,147,91,0.3)]">
-              <Image 
-                src="./assets/logo.jpg" 
-                alt="Aloy Restaurant Logo"
-                width={15}
-                height={15}
-                className="w-16 h-18 object-cover"
-                priority
-              />
+    <>
+      <header className={`fixed left-0 right-0 top-0 z-[1000] flex justify-center transition-all duration-400 ${scrolled ? 'bg-black/90 backdrop-blur-[10px] py-3 shadow-[0_5px_20px_rgba(0,0,0,0.2)]' : 'py-5'}`}>
+        <div className="max-w-[1200px] w-full px-6">
+          <div className="flex items-center justify-between gap-[18px] w-full py-3 px-6 rounded-xl bg-black/40 backdrop-blur-[6px] border border-white/8 transition-all duration-300">
+            <div className="flex items-center gap-3">
+              <div className="w-[58px] h-[68px] rounded-[10px] bg-white grid place-items-center overflow-hidden shadow-[0_4px_12px_rgba(182,147,91,0.3)]">
+                <Image 
+                  src="./assets/logo.jpg" 
+                  alt="Aloy Restaurant Logo"
+                  width={15}
+                  height={15}
+                  className="w-16 h-18 object-cover"
+                  priority
+                />
+              </div>
+              <div>
+                <div className="font-semibold text-[#F5F2E8]">Aloy Restaurant</div>
+                <div className="text-xs text-[#B0B0B0]">Kandy • Since 2012</div>
+              </div>
             </div>
-            <div>
-              <div className="font-semibold text-cream">Aloy Restaurant</div>
-              <div className="text-xs text-muted-foreground">Kandy • Since 2012</div>
+            
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-6">
+              {navigationItems.map((item) => (
+                <a 
+                  key={item.href}
+                  href={item.href} 
+                  className="text-[#F5F2E8] font-medium transition-all duration-300 relative py-2 hover:text-[#B6935B] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#B6935B] after:transition-[width] after:duration-300 hover:after:w-full"
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a href="#reservations" className="bg-[#B6935B] text-[#111] px-6 py-3 rounded-[10px] font-semibold border-none cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(182,147,91,0.3)] hover:bg-[#E3C785] hover:-translate-y-[3px] hover:shadow-[0_6px_18px_rgba(182,147,91,0.4)]">
+                Reservations
+              </a>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden flex flex-col items-center justify-center w-8 h-8 relative focus:outline-none"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle menu"
+            >
+              <span className={`w-6 h-0.5 bg-[#F5F2E8] transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+              <span className={`w-6 h-0.5 bg-[#F5F2E8] transition-all duration-300 mt-1.5 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`w-6 h-0.5 bg-[#F5F2E8] transition-all duration-300 mt-1.5 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={`fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm transition-all duration-300 md:hidden ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+        onClick={closeMobileMenu}
+      />
+
+      {/* Mobile Menu Sidebar */}
+      <div className={`fixed top-0 right-0 h-full w-80 bg-[#181818] border-l border-[#B6935B]/20 z-[1000] transition-transform duration-300 md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex flex-col h-full">
+          {/* Header with close button */}
+          <div className="flex items-center justify-between p-6 border-b border-[#B6935B]/20">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-14 rounded-[10px] bg-white grid place-items-center overflow-hidden shadow-[0_4px_12px_rgba(182,147,91,0.3)]">
+                <Image 
+                  src="./assets/logo.jpg" 
+                  alt="Aloy Restaurant Logo"
+                  width={12}
+                  height={14}
+                  className="w-12 h-16 object-cover"
+                />
+              </div>
+              <div>
+                <div className="font-semibold text-[#F5F2E8] text-lg">Aloy Restaurant</div>
+                <div className="text-xs text-[#B0B0B0]">Kandy • Since 2012</div>
+              </div>
+            </div>
+            
+            {/* Close Button */}
+            <button 
+              className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#B6935B]/10 text-[#F5F2E8] hover:bg-[#B6935B]/20 transition-colors duration-200"
+              onClick={closeMobileMenu}
+              aria-label="Close menu"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Scrollable Content */}
+          <div className="flex-1 overflow-y-auto">
+            <div className="py-6 px-6">
+              {/* Mobile Navigation Links */}
+              <nav className="flex flex-col space-y-4 mb-8">
+                {navigationItems.map((item) => (
+                  <a 
+                    key={item.href}
+                    href={item.href} 
+                    className="text-[#F5F2E8] text-lg font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:bg-[#B6935B]/10 hover:text-[#B6935B] hover:pl-6 border-l-4 border-transparent hover:border-[#B6935B]"
+                    onClick={closeMobileMenu}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+
+              {/* Reservations Button in Mobile Menu */}
+              <div className="mb-8">
+                <a 
+                  href="#reservations" 
+                  className="w-full bg-[#B6935B] text-[#111] px-6 py-4 rounded-xl font-semibold border-none cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(182,147,91,0.3)] hover:bg-[#E3C785] hover:-translate-y-1 hover:shadow-[0_6px_18px_rgba(182,147,91,0.4)] flex items-center justify-center gap-2 text-center"
+                  onClick={closeMobileMenu}
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+                  </svg>
+                  Make Reservation
+                </a>
+              </div>
+
+            
             </div>
           </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <a href="#menu" className="text-cream font-medium transition-all duration-300 relative py-2 hover:text-gold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-[width] after:duration-300 hover:after:w-full">
-              Menu
-            </a>
-            <a href="/about" className="text-cream font-medium transition-all duration-300 relative py-2 hover:text-gold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-[width] after:duration-300 hover:after:w-full">
-              About
-            </a>
-            <a href="#experiences" className="text-cream font-medium transition-all duration-300 relative py-2 hover:text-gold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-[width] after:duration-300 hover:after:w-full">
-              Experiences
-            </a>
-            <a href="#gallery" className="text-cream font-medium transition-all duration-300 relative py-2 hover:text-gold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-[width] after:duration-300 hover:after:w-full">
-              Gallery
-            </a>
-            <a href="#contact" className="text-cream font-medium transition-all duration-300 relative py-2 hover:text-gold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-[width] after:duration-300 hover:after:w-full">
-              Contact
-            </a>
-            <a href="#reservations" className="bg-gold text-[#111] px-6 py-3 rounded-[10px] font-semibold border-none cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(182,147,91,0.3)] hover:bg-hover hover:-translate-y-[3px] hover:shadow-[0_6px_18px_rgba(182,147,91,0.4)]">
-              Reservations
-            </a>
-          </nav>
         </div>
       </div>
-    </header>
+
+      {/* Prevent body scroll when mobile menu is open */}
+      <style jsx global>{`
+        body {
+          overflow: ${isMobileMenuOpen ? 'hidden' : 'auto'};
+        }
+      `}</style>
+    </>
   );
 }

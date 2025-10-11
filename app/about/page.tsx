@@ -154,10 +154,84 @@ export default function About() {
                style={{backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)'}}>
         <div className="about-hero-content fade-in max-w-[800px] px-5">
           <div className="about-hero-subtitle text-[#B6935B] text-sm uppercase tracking-[3px] mb-2">Our Story</div>
-          <h1 className="about-hero-quote font-playfair text-3xl md:text-5xl text-[#F5F2E8] mb-8 leading-tight text-shadow-lg">&ldquo;We Serve Memories&rdquo;</h1>
+          <h1 className="about-hero-quote font-playfair text-3xl md:text-5xl text-[#F5F2E8] mb-8 leading-tight text-shadow-lg">&ldquo;We Serve More Than Food
+We Serve Memories&rdquo;</h1>
           <p className="section-description text-muted-foreground max-w-[600px] mx-auto">
-            Every dish tells a story, every moment creates a memory. Welcome to the heart of Aloy Restaurant.
+           Where Flavors Meet the Mountains
           </p>
+        </div>
+      </section>
+
+            <section className="py-20 bg-gradient-to-b from-[#181818] to-[#1a1a1a]">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="fade-in rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                alt="Aloy Restaurant Interior"
+                className="w-full h-auto transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="fade-in delay-1">
+              <h2 className="font-playfair text-3xl md:text-4xl text-[#F5F2E8] mb-6">Our Story</h2>
+              <p className="text-[#B0B0B0] mb-6 leading-relaxed">
+                Placed between the whispering waters of the Mahaweli River and the emerald folds of the
+Hanthana range, Aloy Restaurant is more than a place to dine—it’s a sanctuary of taste,
+tradition, and tranquility.
+              </p>
+              <p className="text-[#B0B0B0] mb-8 leading-relaxed">
+                Founded in 2012, Aloy was born from a dream to share the vibrant heart of Sri Lankan cuisine
+with the world. Each dish is a tribute to heritage, crafted with spices that tell stories and
+ingredients that echo the island’s bounty. From the fiery warmth of a traditional curry to the
+delicate sweetness of tropical fruit, every bite invites guests on a journey through culture and
+memory.
+              </p>
+               <p className="text-[#B0B0B0] mb-8 leading-relaxed">
+                The restaurant itself is a canvas—Peradeniya Road its frame, Kandy its muse. As the sun dips
+behind the hills, casting golden light across the valley, guests sip on handcrafted cocktails and
+fresh juices, their senses awakened by the symphony of flavors and the serenity of the view.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#B6935B]/10 flex items-center justify-center text-[#B6935B] text-lg">
+                    <i className="fas fa-utensils"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-playfair text-[#F5F2E8] mb-1">Authentic Cuisine</h4>
+                    <p className="text-[#B0B0B0] text-sm">Traditional Sri Lankan recipes</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#B6935B]/10 flex items-center justify-center text-[#B6935B] text-lg">
+                    <i className="fas fa-wine-glass-alt"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-playfair text-[#F5F2E8] mb-1">Fine Wines</h4>
+                    <p className="text-[#B0B0B0] text-sm">Curated selection of wines</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#B6935B]/10 flex items-center justify-center text-[#B6935B] text-lg">
+                    <i className="fas fa-mountain"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-playfair text-[#F5F2E8] mb-1">Scenic Views</h4>
+                    <p className="text-[#B0B0B0] text-sm">Breathtaking river and mountain views</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#B6935B]/10 flex items-center justify-center text-[#B6935B] text-lg">
+                    <i className="fas fa-award"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-playfair text-[#F5F2E8] mb-1">Award Winning</h4>
+                    <p className="text-[#B0B0B0] text-sm">Recognized for excellence</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
