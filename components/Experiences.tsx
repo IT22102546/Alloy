@@ -8,41 +8,25 @@ const experienceItems = [
     title: 'Picnic Lunch by the River',
     description: 'Curated boxes with local flavors—fresh, portable, and scenic. Perfect for a romantic outing or family gathering.',
     image: 'https://images.unsplash.com/photo-1572715376701-9858184c0c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    features: [
-      { icon: 'clock', text: '2-3 hours' },
-      { icon: 'users', text: '2-6 people' },
-      { icon: 'utensils', text: 'Gourmet picnic' }
-    ]
+  
   },
   {
     title: 'Private 30-Guest Dinner',
     description: 'A private riverside table with bespoke set menu options. Perfect for celebrations and corporate events.',
     image: 'https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    features: [
-      { icon: 'clock', text: '3-4 hours' },
-      { icon: 'users', text: 'Up to 30 guests' },
-      { icon: 'crown', text: 'Exclusive service' }
-    ]
+   
   },
   {
     title: "Chef's Table Tasting",
     description: 'A seasonal tasting menu at our chef\'s counter with exclusive dishes and personalized service.',
     image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    features: [
-      { icon: 'clock', text: '2.5 hours' },
-      { icon: 'users', text: 'Up to 8 guests' },
-      { icon: 'star', text: 'Exclusive menu' }
-    ]
+    
   },
   {
     title: 'Sunset Cocktail Experience',
     description: 'Enjoy handcrafted cocktails with panoramic river views during the magical golden hour.',
     image: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
-    features: [
-      { icon: 'clock', text: '1.5 hours' },
-      { icon: 'users', text: '2-20 people' },
-      { icon: 'cocktail', text: 'Signature drinks' }
-    ]
+    
   }
 ];
 
@@ -145,14 +129,7 @@ export default function Experiences() {
                 <div className="p-6">
                   <h3 className="font-playfair text-xl mb-[10px] text-cream">{item.title}</h3>
                   <p className="text-cream/80 mb-5">{item.description}</p>
-                  <div className="flex justify-between border-t border-white/5 pt-[15px]">
-                    {item.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-[5px] text-cream/80 text-sm">
-                        <span className="text-gold">{icons[feature.icon as keyof typeof icons]}</span>
-                        {feature.text}
-                      </div>
-                    ))}
-                  </div>
+                  
                 </div>
               </div>
             ))}

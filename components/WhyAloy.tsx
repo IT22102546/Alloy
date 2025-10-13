@@ -87,9 +87,7 @@ export default function WhyAloy() {
                 </li>
               ))}
             </ul>
-            <a href="#story" className="inline-block mt-6 bg-gold text-[#111] px-6 py-3 rounded-[10px] font-semibold transition-all duration-300 shadow-[0_4px_12px_rgba(182,147,91,0.3)] hover:bg-hover hover:-translate-y-[3px] hover:shadow-[0_6px_18px_rgba(182,147,91,0.4)]">
-              Our Story
-            </a>
+           
           </div>
           <div className="fade-in delay-1 rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
             <img
