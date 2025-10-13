@@ -24,7 +24,7 @@ const experienceItems = [
   },
   {
     title: 'Sunset Mocktail Experience',
-    description: 'Enjoy handcrafted cocktails with panoramic river views during the magical golden hour.',
+    description: 'Enjoy handcrafted mocktails with panoramic river views during the magical golden hour.',
     image: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
     
   }

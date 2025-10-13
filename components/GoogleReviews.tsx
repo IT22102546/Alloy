@@ -79,7 +79,7 @@ export default function GoogleReviews() {
       name: "David Park",
       rating: 5,
       date: "3 months ago",
-      text: "Exceptional culinary journey! Each dish tells a story of Sri Lankan culture with modern twists. The riverside bar offers the best cocktails in town.",
+      text: "Exceptional culinary journey! Each dish tells a story of Sri Lankan culture with modern twists. The riverside bar offers the best mocktails in town.",
       avatar: "DP",
       verified: true
     }
