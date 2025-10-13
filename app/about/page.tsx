@@ -189,7 +189,7 @@ memory.
               </p>
                <p className="text-[#B0B0B0] mb-8 leading-relaxed">
                 The restaurant itself is a canvas—Peradeniya Road its frame, Kandy its muse. As the sun dips
-behind the hills, casting golden light across the valley, guests sip on handcrafted cocktails and
+behind the hills, casting golden light across the valley, guests sip on handcrafted mocktails and
 fresh juices, their senses awakened by the symphony of flavors and the serenity of the view.
               </p>
               

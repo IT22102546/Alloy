@@ -99,7 +99,7 @@ export default function CTA() {
           {[
             { icon: 'sun', title: 'Sunset Dining', desc: 'Witness spectacular sunsets over the river with our exclusive riverside seating' },
             { icon: 'leaf', title: 'Garden Seating', desc: 'Al fresco dining in our beautifully landscaped gardens surrounded by nature' },
-            { icon: 'wine', title: 'Riverside Bar', desc: 'Enjoy handcrafted cocktails and premium spirits by the water\'s edge' }
+            { icon: 'wine', title: 'Riverside Bar', desc: 'Enjoy handcrafted mocktails and premium spirits by the water\'s edge' }
           ].map((feature, index) => (
             <div
               key={index}

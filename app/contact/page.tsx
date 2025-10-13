@@ -120,9 +120,7 @@ export default function Contact() {
           <div className="text-center mb-16 fade-in">
             <div className="text-[#B6935B] text-sm uppercase tracking-[2px] mb-2">Get In Touch</div>
             <h2 className="font-playfair text-3xl md:text-4xl text-[#F5F2E8] mb-4">Contact Us</h2>
-            <p className="text-[#B0B0B0] max-w-[700px] mx-auto text-lg">
-              We'd love to hear from you. Reach out to make a reservation or inquire about our services.
-            </p>
+           
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
