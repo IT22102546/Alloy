@@ -253,21 +253,24 @@ fresh juices, their senses awakened by the symphony of flavors and the serenity 
                 <h2 className="section-title font-playfair text-3xl md:text-4xl text-[#F5F2E8] mb-4">A Message of Welcome</h2>
               </div>
               <p className="text-muted-foreground mb-5 leading-relaxed">
-                For over a decade, Aloy Restaurant has stood as a testament to the rich culinary heritage of Sri Lanka, 
-                blended with contemporary excellence. What began as a dream to create a dining sanctuary has flourished 
-                into an establishment celebrated by locals and travelers alike.
+               Welcome to Aloy Restaurant — where tradition meets innovation, and every dish tells a story.
               </p>
               <p className="text-muted-foreground mb-5 leading-relaxed">
                 Our philosophy is simple: to create unforgettable experiences through exceptional cuisine, warm hospitality, 
                 and the breathtaking beauty of our riverside location. Every ingredient tells a story, every dish carries 
-                tradition, and every guest becomes part of our family.
+                tradition, and every guest becomes part of our family.As Chairman, I take immense pride in the journey we’ve embarked upon. Aloy was born from a simple idea: to celebrate the rich culinary heritage of our region while embracing the creativity and bold flavors of modern cuisine. Our team is passionate about crafting unforgettable dining experiences, whether you're joining us for a casual meal or a special occasion.
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                We invite you to join us on this culinary journey, where the whispers of the Mahaweli River and the majesty 
-                of the Hanthana mountains create the perfect backdrop for memories that will last a lifetime.
+                We believe food is more than sustenance — it’s a bridge between cultures, a spark for conversation, and a source of joy. At Aloy, we source the finest ingredients, honor time-tested recipes, and constantly explore new ways to delight our guests.
+              </p>
+               <p className="text-muted-foreground mb-8 leading-relaxed">
+               Thank you for being part of our story. Your continued support inspires us to raise the bar every day. We look forward to welcoming you with warmth, flavor, and the unmistakable spirit of Aloy.
+              </p>
+               <p className="text-muted-foreground mb-8 leading-relaxed">
+                Warm regards, 
               </p>
               <div className="chairman-signature pt-6 border-t-2 border-[#B6935B]">
-                <div className="signature-name font-playfair text-xl text-[#B6935B] mb-1">Mr. Anura Aloy</div>
+                <div className="signature-name font-playfair text-xl text-[#B6935B] mb-1">Mr. M. P. A. Pillai</div>
                 <div className="signature-title text-muted-foreground text-sm">Founder & Chairman, Aloy Restaurant</div>
               </div>
             </div>
