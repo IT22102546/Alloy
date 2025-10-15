@@ -1,8 +1,9 @@
+// app/experiences/page.tsx
 'use client';
 
-import { useEffect, useRef } from 'react';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { useEffect, useRef } from 'react';
 
 const experiences = [
   {
@@ -15,9 +16,10 @@ const experiences = [
       'Private 30-guest picnic lunch reservations available'
     ],
     images: {
-      main: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      secondary1: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      secondary2: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      main: './assets/Buf1.jpg',
+      secondary1: './assets/Buf2.jpg',
+      secondary2: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      secondary3: 'https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     }
   },
   {
@@ -30,9 +32,10 @@ const experiences = [
       'Perfect for sampling a variety in one visit'
     ],
     images: {
-      main: 'https://images.unsplash.com/photo-1554679665-f5537f187268?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      secondary1: 'https://images.unsplash.com/photo-1549451371-64aa98a6f660?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      secondary2: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80'
+      main: './assets/Sig1.jpg',
+      secondary1: './assets/Sig2.jpg',
+      secondary2: './assets/Sig3.jpg',
+      secondary3: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80'
     }
   },
   {
@@ -47,7 +50,8 @@ const experiences = [
     images: {
       main: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       secondary1: 'https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-4.0.3&auto=format&fit=crop&w=2086&q=80',
-      secondary2: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      secondary2: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      secondary3: 'https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     }
   },
   {
@@ -60,15 +64,54 @@ const experiences = [
       'Perfect for sharing with friends or family.'
     ],
     images: {
-      main: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
-      secondary1: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      secondary2: 'https://images.unsplash.com/photo-1535141192574-5d4897c12636?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80'
+      main: './assets/Des1.jpg',
+      secondary1: './assets/Des2.jpg',
+      secondary2: './assets/Des3.jpg',
+      secondary3: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80'
     }
   }
 ];
 
-export default function Experiences() {
+export default function ExperiencesPage() {
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Header scroll effect
+    const handleScroll = () => {
+      const header = document.getElementById('header');
+      if (header) {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+    };
+
+    // Fade-in animation on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const fadeInObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(el => {
+      fadeInObserver.observe(el);
+    });
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      fadeElements.forEach(el => {
+        fadeInObserver.unobserve(el);
+      });
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -93,24 +136,27 @@ export default function Experiences() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <Header />
-      
-     <section className="about-hero min-h-[70vh] relative flex items-center justify-center text-center bg-cover bg-center" 
-               style={{backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)'}}>
-        <div className="about-hero-content fade-in max-w-[800px] px-5">
-          <div className="about-hero-subtitle text-[#B6935B] text-sm uppercase tracking-[3px] mb-2">Our Story</div>
-          <h1 className="about-hero-quote font-playfair text-3xl md:text-5xl text-[#F5F2E8] mb-8 leading-tight text-shadow-lg">&ldquo;We Serve More Than Food
-We Serve Memories&rdquo;</h1>
-          <p className="section-description text-muted-foreground max-w-[600px] mx-auto">
-           Where Flavors Meet the Mountains
+    <div className="min-h-screen bg-[#181818] text-white">
+      <Header/>
+
+      {/* Hero Section */}
+      <section className="experiences-hero min-h-[80vh] relative flex items-center justify-center text-center bg-gradient-to-r from-black/70 to-black/70 bg-cover bg-center" 
+               style={{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/ExBanner.jpg)'}}>
+        <div className="experiences-hero-content max-w-4xl px-5 fade-in">
+          <div className="experiences-hero-subtitle text-[#B6935B] text-lg uppercase tracking-widest mb-6">Unforgettable Moments</div>
+          <h1 className="experiences-hero-title font-playfair text-5xl md:text-6xl text-[#F5F2E8] mb-5 text-shadow-lg leading-tight">Curated Dining Experiences</h1>
+          <p className="hero-description text-[#B0B0B0] text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+            From intimate dinners to grand celebrations, discover our exclusive dining experiences designed to create lasting memories in the heart of Kandy.
           </p>
+          <a href="#experiences" className="btn-primary bg-[#B6935B] text-black px-8 py-4 rounded-xl font-semibold border-none cursor-pointer transition-all duration-300 ease-in-out shadow-lg shadow-[#B6935B]/30 hover:bg-[#E3C785] hover:translate-y-[-3px] hover:shadow-xl hover:shadow-[#B6935B]/40 inline-block">
+            Explore Experiences
+          </a>
         </div>
       </section>
 
       {/* Experiences Grid */}
       <section ref={sectionRef} id="experiences" className="experiences-section py-20 bg-gradient-to-b from-[#1a1a1a] to-[#181818]">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="max-w-[1400px] mx-auto px-6">
           <div className="section-header fade-in text-center mb-16">
             <div className="text-[#B6935B] text-sm uppercase tracking-[2px] mb-2">Our Offerings</div>
             <h2 className="font-playfair text-3xl md:text-4xl text-[#F5F2E8] mb-4">Signature Experiences</h2>
@@ -120,37 +166,49 @@ We Serve Memories&rdquo;</h1>
             </p>
           </div>
 
-          <div id="experience-grid">
+          <div className="space-y-32">
             {experiences.map((experience, index) => (
               <div
                 key={index}
-                className={`experience-grid ${index % 2 === 1 ? 'reverse' : ''} fade-in ${index > 0 ? 'delay-1' : ''} mb-20 last:mb-0`}
+                className={`experience-grid grid grid-cols-1 lg:grid-cols-2 gap-12 items-center fade-in ${
+                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                } ${index > 0 ? 'delay-1' : ''}`}
               >
                 {/* Content Side */}
-                <div className="experience-content">
-                  <div className="experience-category">{experience.category}</div>
-                  <h3 className="experience-title">{experience.title}</h3>
-                  <p className="experience-description">{experience.description}</p>
-                  <ul className="experience-features">
+                <div className={`experience-content space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className="experience-category text-[#B6935B] text-sm uppercase tracking-wider font-semibold">
+                    {experience.category}
+                  </div>
+                  <h3 className="experience-title font-playfair text-3xl md:text-4xl text-[#F5F2E8]">
+                    {experience.title}
+                  </h3>
+                  <p className="experience-description text-[#B0B0B0] text-lg leading-relaxed">
+                    {experience.description}
+                  </p>
+                  <ul className="experience-features space-y-3">
                     {experience.features.map((feature, featureIndex) => (
-                      <li key={featureIndex}>
-                        <i className="fas fa-check"></i>
+                      <li key={featureIndex} className="flex items-start gap-3 text-[#B0B0B0]">
+                        <i className="fas fa-check text-[#B6935B] mt-1 flex-shrink-0"></i>
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  
                 </div>
 
-                {/* Images Side */}
-                <div className="experience-images">
-                  <div className="image-main rounded-2xl overflow-hidden">
+                {/* Images Side - 2x2 Grid */}
+                <div className={`experience-images grid grid-cols-2 grid-rows-2 gap-4 h-[500px] ${
+                  index % 2 === 1 ? 'lg:col-start-1' : ''
+                }`}>
+                  {/* Top Left - Main Image */}
+                  <div className="image-main col-span-1 row-span-2 rounded-2xl overflow-hidden">
                     <img 
                       src={experience.images.main} 
                       alt={experience.title}
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
+                  
+                  {/* Top Right - Secondary 1 */}
                   <div className="image-secondary rounded-2xl overflow-hidden">
                     <img 
                       src={experience.images.secondary1} 
@@ -158,10 +216,21 @@ We Serve Memories&rdquo;</h1>
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
+                  
+                  {/* Bottom Right - Secondary 2 */}
                   <div className="image-secondary rounded-2xl overflow-hidden">
                     <img 
                       src={experience.images.secondary2} 
                       alt={`${experience.title} - Detail 2`}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                  
+                  {/* Bottom Left - Secondary 3 */}
+                  <div className="image-secondary rounded-2xl overflow-hidden">
+                    <img 
+                      src={experience.images.secondary3} 
+                      alt={`${experience.title} - Detail 3`}
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
@@ -171,8 +240,7 @@ We Serve Memories&rdquo;</h1>
           </div>
         </div>
       </section>
-
-      <Footer />
-    </main>
+      <Footer/>
+    </div>
   );
 }
