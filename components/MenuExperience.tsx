@@ -29,7 +29,7 @@ const menuCards = [
       'Enjoy traditional Sri Lankan sweets and tropical fruit platters.',
       'A light and refreshing finish to your meal.'
     ],
-    image: './assets/Sig1.jpg'
+    image: './assets/Dessert.jpg'
   }
 ];
 
