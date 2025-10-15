@@ -203,15 +203,7 @@ fresh juices, their senses awakened by the symphony of flavors and the serenity 
                     <p className="text-[#B0B0B0] text-sm">Traditional Sri Lankan recipes</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#B6935B]/10 flex items-center justify-center text-[#B6935B] text-lg">
-                    <i className="fas fa-wine-glass-alt"></i>
-                  </div>
-                  <div>
-                    <h4 className="font-playfair text-[#F5F2E8] mb-1">Fine Wines</h4>
-                    <p className="text-[#B0B0B0] text-sm">Curated selection of wines</p>
-                  </div>
-                </div>
+                
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[#B6935B]/10 flex items-center justify-center text-[#B6935B] text-lg">
                     <i className="fas fa-mountain"></i>
@@ -331,7 +323,7 @@ fresh juices, their senses awakened by the symphony of flavors and the serenity 
                 ]
               },
               {
-                year: "2023",
+                year: "2025",
                 title: "Modern Excellence",
                 description: "Today, we stand as Kandy's premier dining destination, celebrated for sustainability and community engagement while creating unforgettable guest experiences.",
                 image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",

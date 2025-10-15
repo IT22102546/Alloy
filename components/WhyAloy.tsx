@@ -64,7 +64,7 @@ export default function WhyAloy() {
       id="about"
       className="py-20 relative bg-cover bg-center"
       style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)'
+        backgroundImage: 'url("./assets/Background.jpg")'
       }}
     >
       <div className="absolute inset-0 bg-black/70" />
@@ -74,7 +74,7 @@ export default function WhyAloy() {
             <p className="text-base text-gold uppercase tracking-[2px] mb-[10px]">Our Story</p>
             <h2 className="font-playfair text-[42px] mb-[30px] text-left">Why Aloy Restaurant</h2>
             <p className="mb-8 text-cream leading-relaxed">
-             Aloy Restaurant in Kandy, Sri Lanka, offers more than just a meal—it’s a culinary experience rooted in tradition and scenic beauty Aloy Restaurant introduce Western to authentic Sri Lankan traditional cuisine to international food lovers seeking new taste sensations. Located  to boast a picturesque setting that enhances the dining experience. Guests often enjoy cocktails, mocktails, and fresh fruit juices while soaking in the serene views Nestled along Peradeniya Road, it overlooks the lush Hanthana Mountain range, offering diners a glamorous view of the world heritage city of Kandy.
+             Aloy Restaurant in Kandy, Sri Lanka, offers more than just a meal—it's a culinary experience rooted in tradition and scenic beauty Aloy Restaurant introduce Western to authentic Sri Lankan traditional cuisine to international food lovers seeking new taste sensations. Located  to boast a picturesque setting that enhances the dining experience. Guests often enjoy cocktails, mocktails, and fresh fruit juices while soaking in the serene views Nestled along Peradeniya Road, it overlooks the lush Hanthana Mountain range, offering diners a glamorous view of the world heritage city of Kandy.
             </p>
             <ul className="list-none mt-[30px]">
               {whyPoints.map((point, index) => (
@@ -87,11 +87,15 @@ export default function WhyAloy() {
                 </li>
               ))}
             </ul>
-           
+            
+            {/* Unlock the Experience Button */}
+            <button className="mt-6 px-8 py-3 bg-gold text-dark-brown font-semibold rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              Unlock the Experience
+            </button>
           </div>
           <div className="fade-in delay-1 rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
             <img
-              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+              src="./assets/SmallImage.jpg"
               alt="Aloy Restaurant interior"
               className="w-full h-auto block"
             />

@@ -117,11 +117,7 @@ export default function Contact() {
       {/* Contact Section */}
       <section className="py-20 bg-gradient-to-b from-[#1a1a1a] to-[#181818]">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="text-center mb-16 fade-in">
-            <div className="text-[#B6935B] text-sm uppercase tracking-[2px] mb-2">Get In Touch</div>
-            <h2 className="font-playfair text-3xl md:text-4xl text-[#F5F2E8] mb-4">Contact Us</h2>
-           
-          </div>
+          
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Contact Form */}
