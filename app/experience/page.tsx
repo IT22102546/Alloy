@@ -1,35 +1,13 @@
+// app/experiences/page.tsx
 'use client';
+
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { useEffect, useRef } from 'react';
 
-// Import all local images
-import Buf1 from './images/Buf1.jpg';
-import Buf2 from './images/Buf2.jpg';
-import Sig1 from './images/Sig1.jpg';
-import Sig2 from './images/Sig2.jpg';
-import Sig3 from './images/Sig3.jpg';
-import Des1 from './images/Des1.jpg';
-import Des2 from './images/Des2.jpg';
-import Des3 from './images/Des3.jpg';
-import ExBanner from './images/ExBanner.jpg';
 
-type ExperienceImage = { src: string } | string;
 
-type Experience = {
-  category: string;
-  title: string;
-  description: string;
-  features: string[];
-  images: {
-    main: ExperienceImage;
-    secondary1: ExperienceImage;
-    secondary2: ExperienceImage;
-    secondary3: ExperienceImage;
-  };
-};
-
-const experiences: Experience[] = [
+const experiences = [
   {
     category: 'Exclusive Dining',
     title: 'Exclusive Buffet Experience',
@@ -40,8 +18,8 @@ const experiences: Experience[] = [
       'Private 30-guest picnic lunch reservations available'
     ],
     images: {
-      main: Buf1,
-      secondary1: Buf2,
+      main: '../assets/Buf1.jpg',
+      secondary1: '/assets/Buf2.jpg',
       secondary2: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       secondary3: 'https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     }
@@ -56,9 +34,9 @@ const experiences: Experience[] = [
       'Perfect for sampling a variety in one visit'
     ],
     images: {
-      main: Sig1,
-      secondary1: Sig2,
-      secondary2: Sig3,
+      main: '/assets/Sig1.jpg',
+      secondary1: '/assets/Sig2.jpg',
+      secondary2: './assets/Sig3.jpg',
       secondary3: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80'
     }
   },
@@ -88,9 +66,9 @@ const experiences: Experience[] = [
       'Perfect for sharing with friends or family.'
     ],
     images: {
-      main: Des1,
-      secondary1: Des2,
-      secondary2: Des3,
+      main: '/assets/Des1.jpg',
+      secondary1: '/assets/Des2.jpg',
+      secondary2: '/assets/Des3.jpg',
       secondary3: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80'
     }
   }
@@ -165,7 +143,7 @@ export default function ExperiencesPage() {
 
       {/* Hero Section */}
       <section className="experiences-hero min-h-[80vh] relative flex items-center justify-center text-center bg-gradient-to-r from-black/70 to-black/70 bg-cover bg-center" 
-               style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${ExBanner.src})`}}>
+               style={{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/ExBanner.jpg)'}}>
         <div className="experiences-hero-content max-w-4xl px-5 fade-in">
           <div className="experiences-hero-subtitle text-[#B6935B] text-lg uppercase tracking-widest mb-6">Unforgettable Moments</div>
           <h1 className="experiences-hero-title font-playfair text-5xl md:text-6xl text-[#F5F2E8] mb-5 text-shadow-lg leading-tight">Curated Dining Experiences</h1>
@@ -226,7 +204,7 @@ export default function ExperiencesPage() {
                   {/* Top Left - Main Image */}
                   <div className="image-main col-span-1 row-span-2 rounded-2xl overflow-hidden">
                     <img 
-                      src={typeof experience.images.main === 'string' ? experience.images.main : experience.images.main.src}
+                      src={experience.images.main} 
                       alt={experience.title}
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
@@ -235,7 +213,7 @@ export default function ExperiencesPage() {
                   {/* Top Right - Secondary 1 */}
                   <div className="image-secondary rounded-2xl overflow-hidden">
                     <img 
-                      src={typeof experience.images.secondary1 === 'string' ? experience.images.secondary1 : experience.images.secondary1.src}
+                      src={experience.images.secondary1} 
                       alt={`${experience.title} - Detail 1`}
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
@@ -244,7 +222,7 @@ export default function ExperiencesPage() {
                   {/* Bottom Right - Secondary 2 */}
                   <div className="image-secondary rounded-2xl overflow-hidden">
                     <img 
-                      src={typeof experience.images.secondary2 === 'string' ? experience.images.secondary2 : experience.images.secondary2.src}
+                      src={experience.images.secondary2} 
                       alt={`${experience.title} - Detail 2`}
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
@@ -253,7 +231,7 @@ export default function ExperiencesPage() {
                   {/* Bottom Left - Secondary 3 */}
                   <div className="image-secondary rounded-2xl overflow-hidden">
                     <img 
-                      src={typeof experience.images.secondary3 === 'string' ? experience.images.secondary3 : experience.images.secondary3.src}
+                      src={experience.images.secondary3} 
                       alt={`${experience.title} - Detail 3`}
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
