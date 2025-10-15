@@ -102,7 +102,7 @@ export default function Contact() {
       <section 
         className="min-h-[70vh] relative flex items-center justify-center text-center bg-cover bg-center" 
         style={{
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)'
+          backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assets/ContBanner.jpg)'
         }}
       >
         <div className="fade-in max-w-[800px] px-5">
