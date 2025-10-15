@@ -152,7 +152,7 @@ export default function About() {
       
       {/* About Hero Banner */}
       <section className="about-hero min-h-[70vh] relative flex items-center justify-center text-center bg-cover bg-center" 
-               style={{backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)'}}>
+               style={{backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assets/AbBanner.jpg)'}}>
         <div className="about-hero-content fade-in max-w-[800px] px-5">
           <div className="about-hero-subtitle text-[#B6935B] text-sm uppercase tracking-[3px] mb-2">Our Story</div>
           <h1 className="about-hero-quote font-playfair text-3xl md:text-5xl text-[#F5F2E8] mb-8 leading-tight text-shadow-lg">&ldquo;We Serve More Than Food
@@ -168,7 +168,7 @@ We Serve Memories&rdquo;</h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="fade-in rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                src="./assets/OurStory.jpg" 
                 alt="Aloy Restaurant Interior"
                 className="w-full h-auto transition-transform duration-500 hover:scale-105"
               />
@@ -293,7 +293,7 @@ fresh juices, their senses awakened by the symphony of flavors and the serenity 
                 year: "2012",
                 title: "The Humble Beginning",
                 description: "Aloy Restaurant opened with 10 tables and a big dream - to blend Sri Lankan warmth with world-class dining. Our riverside location quickly became the talk of Kandy.",
-                image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80",
+                image: "/assets/HumbleBeginning.jpg",
                 stats: [
                   { icon: "utensils", number: 10, label: "Tables" },
                   { icon: "user-chef", number: 3, label: "Chefs" },
@@ -304,7 +304,7 @@ fresh juices, their senses awakened by the symphony of flavors and the serenity 
                 year: "2015",
                 title: "Recognition & Growth",
                 description: "Earning the TripAdvisor Certificate of Excellence marked our commitment to quality. We expanded while preserving the intimate dining experience our guests loved.",
-                image: "https://images.unsplash.com/photo-1592861956120-e524fc739696?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+                image: "/assets/Recognition.jpg",
                 stats: [
                   { icon: "chair", number: 50, label: "Tables" },
                   { icon: "smile", number: 95, label: "Satisfaction" },
@@ -315,7 +315,7 @@ fresh juices, their senses awakened by the symphony of flavors and the serenity 
                 year: "2018",
                 title: "Culinary Revolution",
                 description: "We introduced signature tasting menus and the chef's table experience, blending tradition with innovation. Local sourcing became our culinary philosophy.",
-                image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+                image: "/assets/CulinaryRevolution.jpg",
                 stats: [
                   { icon: "book-open", number: 12, label: "New Menus" },
                   { icon: "leaf", number: 100, label: "Local Produce" },
@@ -326,7 +326,7 @@ fresh juices, their senses awakened by the symphony of flavors and the serenity 
                 year: "2025",
                 title: "Modern Excellence",
                 description: "Today, we stand as Kandy's premier dining destination, celebrated for sustainability and community engagement while creating unforgettable guest experiences.",
-                image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+                image: "/assets/ModernExcellence.jpg",
                 stats: [
                   { icon: "users", number: 10000, label: "Guests" },
                   { icon: "star", number: 4.9, label: "Rating" },
