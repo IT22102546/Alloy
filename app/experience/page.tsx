@@ -14,7 +14,22 @@ import Des2 from './images/Des2.jpg';
 import Des3 from './images/Des3.jpg';
 import ExBanner from './images/ExBanner.jpg';
 
-const experiences = [
+type ExperienceImage = { src: string } | string;
+
+type Experience = {
+  category: string;
+  title: string;
+  description: string;
+  features: string[];
+  images: {
+    main: ExperienceImage;
+    secondary1: ExperienceImage;
+    secondary2: ExperienceImage;
+    secondary3: ExperienceImage;
+  };
+};
+
+const experiences: Experience[] = [
   {
     category: 'Exclusive Dining',
     title: 'Exclusive Buffet Experience',
