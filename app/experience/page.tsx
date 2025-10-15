@@ -16,8 +16,8 @@ const experiences = [
       'Private 30-guest picnic lunch reservations available'
     ],
     images: {
-      main: './assets/Buf1.jpg',
-      secondary1: './assets/Buf2.jpg',
+      main: '/assets/Buf1.jpg',
+      secondary1: '/assets/Buf2.jpg',
       secondary2: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       secondary3: 'https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     }
@@ -32,8 +32,8 @@ const experiences = [
       'Perfect for sampling a variety in one visit'
     ],
     images: {
-      main: './assets/Sig1.jpg',
-      secondary1: './assets/Sig2.jpg',
+      main: '/assets/Sig1.jpg',
+      secondary1: '/assets/Sig2.jpg',
       secondary2: './assets/Sig3.jpg',
       secondary3: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80'
     }
@@ -64,9 +64,9 @@ const experiences = [
       'Perfect for sharing with friends or family.'
     ],
     images: {
-      main: './assets/Des1.jpg',
-      secondary1: './assets/Des2.jpg',
-      secondary2: './assets/Des3.jpg',
+      main: '/assets/Des1.jpg',
+      secondary1: '/assets/Des2.jpg',
+      secondary2: '/assets/Des3.jpg',
       secondary3: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80'
     }
   }
@@ -141,7 +141,7 @@ export default function ExperiencesPage() {
 
       {/* Hero Section */}
       <section className="experiences-hero min-h-[80vh] relative flex items-center justify-center text-center bg-gradient-to-r from-black/70 to-black/70 bg-cover bg-center" 
-               style={{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./assets/ExBanner.jpg)'}}>
+               style={{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/ExBanner.jpg)'}}>
         <div className="experiences-hero-content max-w-4xl px-5 fade-in">
           <div className="experiences-hero-subtitle text-[#B6935B] text-lg uppercase tracking-widest mb-6">Unforgettable Moments</div>
           <h1 className="experiences-hero-title font-playfair text-5xl md:text-6xl text-[#F5F2E8] mb-5 text-shadow-lg leading-tight">Curated Dining Experiences</h1>
