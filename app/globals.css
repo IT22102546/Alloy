@@ -959,3 +959,86 @@
     transition: width 0.3s ease;
   }
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .experience-grid.reverse {
+    direction: ltr;
+  }
+  
+  .experience-images {
+    height: 400px;
+    order: -1;
+  }
+  
+  .experience-content {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-title {
+    font-size: 2rem;
+  }
+  
+  .experience-images {
+    height: 300px;
+    gap: 10px;
+  }
+  
+  .experience-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .experience-images {
+    height: 500px; /* Increased height for better visibility */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr; /* Main image takes more space */
+    gap: 8px;
+  }
+  
+  /* Correct grid positioning for mobile */
+  .image-main {
+    grid-column: 1 / span 2; /* Main image spans full width */
+    grid-row: 1;
+  }
+  
+  .image-secondary:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .image-secondary:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  
+  .image-secondary:nth-of-type(3) {
+    grid-column: 1 / span 2; /* Last image spans full width */
+    grid-row: 3;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .experience-images {
+    height: 450px;
+    grid-template-rows: 1.5fr 1fr 1fr;
+    gap: 6px;
+  }
+  
+  .experience-title {
+    font-size: 1.75rem;
+  }
+  
+  .experience-description {
+    font-size: 1rem;
+  }
+}
