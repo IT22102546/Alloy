@@ -323,7 +323,7 @@ fresh juices, their senses awakened by the symphony of flavors and the serenity 
                 ]
               },
               {
-                year: "2025",
+                year: "Present",
                 title: "Modern Excellence",
                 description: "Today, we stand as Kandy's premier dining destination, celebrated for sustainability and community engagement while creating unforgettable guest experiences.",
                 image: "/assets/ModernExcellence.jpg",
@@ -379,7 +379,7 @@ fresh juices, their senses awakened by the symphony of flavors and the serenity 
               <span>2012</span>
               <span>2015</span>
               <span>2018</span>
-              <span>2023</span>
+              <span>Present</span>
             </div>
           </div>
         </div>

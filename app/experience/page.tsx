@@ -53,7 +53,7 @@ const experiences = [
       main: '/assets/moc1.jpg',
       secondary1: '/assets/moc2.jpg',
       secondary2: '/assets/moc3.jpg',
-      secondary3: '/assets/Dessert.jpg'
+      secondary3: '/assets/moc4.jpg'
     }
   },
   {
