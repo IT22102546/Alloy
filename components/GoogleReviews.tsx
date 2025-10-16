@@ -141,7 +141,7 @@ export default function GoogleReviews() {
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <a
-                  href="https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID"
+                  href="https://www.google.com/search?q=aloy+restaurant&sca_esv=504682394de47591&rlz=1C1GCEU_enLK1120LK1121&sxsrf=AE3TifPY4UdcK9HAEnFlVcWeXeuJ3G5SWA%3A1760636097916&ei=wSzxaMbcN-Wt4-EP09O0uAY&ved=0ahUKEwiGwcfJoKmQAxXl1jgGHdMpDWcQ4dUDCBA&uact=5&oq=aloy+restaurant&gs_lp=Egxnd3Mtd2l6LXNlcnAiD2Fsb3kgcmVzdGF1cmFudDIQEC4YrwEYxwEYgAQYigUYJzIKECMYgAQYigUYJzIEECMYJzIKECMYgAQYigUYJzIMEAAYgAQYigUYQxgKMgUQABiABDIFEAAYgAQyBxAAGIAEGAoyBxAAGIAEGAoyBxAAGIAEGAoyHRAuGK8BGMcBGIAEGIoFGJcFGNwEGN4EGOAE2AEBSIwbULIUWL0YcAN4AZABAJgBvgKgAfkDqgEHMC4xLjAuMbgBA8gBAPgBAZgCBaAC3ATCAgoQABhHGNYEGLADwgINEAAYgAQYigUYQxiwA8ICDhAAGOQCGNYEGLAD2AEBwgIZEC4YgAQYigUYQxjHARivARjIAxiwA9gBAcICBxAjGLACGCfCAgcQABiABBgNmAMAiAYBkAYTugYGCAEQARgJkgcHMy4wLjEuMaAHkxWyBwUyLTEuMbgHnATCBwUzLTQuMcgHUQ&sclient=gws-wiz-serp#lrd=0x3ae368c1a7f465db:0x9303b519c0562657,3,,,,"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative bg-gradient-to-r from-[#B6935B] to-[#E3C785] text-[#111] px-8 py-4 rounded-2xl font-semibold transition-all duration-500 shadow-2xl hover:shadow-3xl hover:-translate-y-2 flex items-center justify-center gap-3 min-w-[220px] overflow-hidden"
