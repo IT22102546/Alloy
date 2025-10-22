@@ -427,14 +427,14 @@ const getImageUrl = (image: any, width: number = 800): string | null => {
 
         /* ---------- Gallery Hero Banner ---------- */
         .gallery-hero {
-          min-height: 70vh;
+          min-height: 100vh;
           position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
           text-align: center;
           background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                      url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover;
+                      url('/assets/gallery.jpg') center/cover;
           margin-top: 80px;
         }
 
