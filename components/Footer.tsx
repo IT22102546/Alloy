@@ -38,8 +38,8 @@ export default function Footer() {
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 002.309 10.024 5.997 5.997 0 008.738-5.218 5.997 5.997 0 008.738 5.218 5.997 5.997 0 002.309-10.024L24 6.648h-4.361c-2.307-1.569-4.975-2.353-7.645-2.353h.012zm0 2.208c1.869 0 3.717.523 5.334 1.51a8.823 8.823 0 00-5.334 2.92 8.823 8.823 0 00-5.334-2.92c1.617-.987 3.465-1.51 5.334-1.51zm-6 4.5c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4zm12 0c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4zm-12 2c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm12 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2z" />
                     </svg>
-                  )}
-                 
+                  )
+                  }
                 </a>
               ))}
             </div>
@@ -102,11 +102,7 @@ export default function Footer() {
             </h3>
             <ul className="list-none space-y-4">
               {[
-                { day: 'Monday - Thursday', time: '11:30 - 22:00' },
-                { day: 'Friday - Saturday', time: '11:30 - 23:00' },
-                { day: 'Sunday', time: '11:30 - 22:00' },
-                { day: 'Lunch Service', time: '11:30 - 15:00' },
-                { day: 'Dinner Service', time: '18:00 - 22:30' }
+                { day: 'Monday - Sunday', time: '11:00 am - 4:00 pm' }
               ].map((schedule, index) => (
                 <li key={index} className="flex justify-between items-center py-3 border-b border-white/10 last:border-b-0 group hover:bg-white/5 hover:px-3 hover:-mx-3 rounded-lg transition-all duration-300">
                   <span className="font-medium text-cream group-hover:text-gold transition-colors duration-300">{schedule.day}</span>
