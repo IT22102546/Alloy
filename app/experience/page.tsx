@@ -35,7 +35,7 @@ const experiences = [
       main: '/assets/Sig1.jpg',
       secondary1: '/assets/Sig2.jpg',
       secondary2: './assets/Sig3.jpg',
-      secondary3: '/assets/Sig2.jpg'
+      secondary3: '/assets/Sig4.jpg'
     }
   },
   {
@@ -140,7 +140,7 @@ export default function ExperiencesPage() {
       <Header/>
 
       {/* Hero Section */}
-      <section className="experiences-hero min-h-[80vh] relative flex items-center justify-center text-center bg-gradient-to-r from-black/70 to-black/70 bg-cover bg-center" 
+      <section className="experiences-hero min-h-[100vh] relative flex items-center justify-center text-center bg-gradient-to-r from-black/70 to-black/70 bg-cover bg-center" 
                style={{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/EXBanner.jpg)'}}>
         <div className="experiences-hero-content max-w-4xl px-5 fade-in">
           <div className="experiences-hero-subtitle text-[#B6935B] text-lg uppercase tracking-widest mb-6">Unforgettable Moments</div>

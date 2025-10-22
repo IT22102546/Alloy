@@ -151,7 +151,7 @@ export default function About() {
       <Header />
       
       {/* About Hero Banner */}
-      <section className="about-hero min-h-[70vh] relative flex items-center justify-center text-center bg-cover bg-center" 
+      <section className="about-hero min-h-[100vh] relative flex items-center justify-center text-center bg-cover bg-center" 
                style={{backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assets/AbBanner.jpg)'}}>
         <div className="about-hero-content fade-in max-w-[800px] px-5">
           <div className="about-hero-subtitle text-[#B6935B] text-sm uppercase tracking-[3px] mb-2">Our Story</div>
@@ -234,7 +234,7 @@ fresh juices, their senses awakened by the symphony of flavors and the serenity 
           <div className="chairman-content grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="chairman-image fade-in rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                src="/assets/chairman.png" 
                 alt="Chairman"
                 className="w-full h-auto"
               />

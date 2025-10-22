@@ -35,17 +35,24 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed left-0 right-0 top-0 z-[1000] flex justify-center transition-all duration-400 ${scrolled ? 'bg-black/90 backdrop-blur-[10px] py-3 shadow-[0_5px_20px_rgba(0,0,0,0.2)]' : 'py-5'}`}>
-        <div className="max-w-[1200px] w-full px-6">
-          <div className="flex items-center justify-between gap-[18px] w-full py-3 px-6 rounded-xl bg-black/40 backdrop-blur-[6px] border border-white/8 transition-all duration-300">
+      <header className={`fixed left-0 right-0 top-0 z-[1000] transition-all duration-400 ${scrolled ? 'py-3' : 'py-2'}`}>
+        {/* Background overlay that only covers the content area */}
+        <div className={`absolute inset-0 transition-all duration-400 ${scrolled ? 'bg-[#181818]' : 'bg-transparent'}`} 
+             style={{
+               maskImage: 'linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)',
+               WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)'
+             }} />
+        
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+          <div className={`flex items-center justify-between gap-[18px] w-full py-3 px-6 rounded-xl transition-all duration-300 ${scrolled ? 'bg-[#181818] border-white/10' : 'bg-black/40 backdrop-blur-[6px] border-white/8'} border`}>
             <div className="flex items-center gap-3">
-              <div className="w-[58px] h-[68px] rounded-[10px] bg-white grid place-items-center overflow-hidden shadow-[0_4px_12px_rgba(182,147,91,0.3)]">
+              <div className="w-[80px] h-[80px]">
                 <Image 
-                  src="./assets/logo.jpg" 
+                  src="./assets/Logo.png" 
                   alt="Aloy Restaurant Logo"
-                  width={15}
-                  height={15}
-                  className="w-16 h-18 object-cover"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
                   priority
                 />
               </div>
@@ -97,13 +104,13 @@ export default function Header() {
           {/* Header with close button */}
           <div className="flex items-center justify-between p-6 border-b border-[#B6935B]/20">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-14 rounded-[10px] bg-white grid place-items-center overflow-hidden shadow-[0_4px_12px_rgba(182,147,91,0.3)]">
+              <div className="w-[70px] h-[70px]">
                 <Image 
-                  src="./assets/logo.jpg" 
+                  src="./assets/Logo.png" 
                   alt="Aloy Restaurant Logo"
-                  width={12}
-                  height={14}
-                  className="w-12 h-16 object-cover"
+                  width={70}
+                  height={70}
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div>
@@ -154,8 +161,6 @@ export default function Header() {
                   Make Reservation
                 </a>
               </div>
-
-            
             </div>
           </div>
         </div>
