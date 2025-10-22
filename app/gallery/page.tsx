@@ -7,9 +7,9 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
 export default function GalleryPage() {
-  const [galleryItems, setGalleryItems] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [galleryItems, setGalleryItems] = useState<any[]>([]);
+const [filteredItems, setFilteredItems] = useState<any[]>([]);
+const [activeFilter, setActiveFilter] = useState('all');;
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -94,32 +94,39 @@ useEffect(() => {
   }, [filteredItems]);
 
   // Handle keyboard navigation for lightbox
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (!lightboxOpen) return;
-      
-      if (e.key === 'Escape') {
-        closeLightbox();
-      } else if (e.key === 'ArrowLeft') {
-        navigateLightbox(-1);
-      } else if (e.key === 'ArrowRight') {
-        navigateLightbox(1);
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxOpen, currentImageIndex, filteredItems]);
-
-  const handleFilter = (filter) => {
-    setActiveFilter(filter);
-    if (filter === 'all') {
-      setFilteredItems(galleryItems);
-    } else {
-      const filtered = galleryItems.filter(item => item.category === filter);
-      setFilteredItems(filtered);
+// Handle keyboard navigation for lightbox
+useEffect(() => {
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (!lightboxOpen) return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowLeft') {
+      navigateLightbox(-1);
+    } else if (e.key === 'ArrowRight') {
+      navigateLightbox(1);
     }
   };
+
+  document.addEventListener('keydown', handleKeyDown);
+  return () => document.removeEventListener('keydown', handleKeyDown);
+}, [lightboxOpen, currentImageIndex, filteredItems]);
+
+const handleFilter = (filter: string) => {
+  setActiveFilter(filter);
+  if (filter === 'all') {
+    setFilteredItems(galleryItems);
+  } else {
+    const filtered = galleryItems.filter(item => item.category === filter);
+    setFilteredItems(filtered);
+  }
+};
+
+const handleLightboxClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  if (e.target === lightboxRef.current) {
+    closeLightbox();
+  }
+};
 
   const getCategoryDisplayName = (category) => {
     const categoryMap = {
@@ -157,11 +164,7 @@ useEffect(() => {
     setCurrentImageIndex(newIndex);
   };
 
-  const handleLightboxClick = (e) => {
-    if (e.target === lightboxRef.current) {
-      closeLightbox();
-    }
-  };
+
 
   const currentLightboxItem = filteredItems[currentImageIndex];
 
