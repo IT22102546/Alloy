@@ -6,55 +6,72 @@ import Image from 'next/image';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
+interface GalleryItem {
+  _id: string;
+  title: string;
+  category: string;
+  description: string;
+  image: {
+    asset: {
+      _id: string;
+      url: string;
+      metadata: {
+        dimensions: any;
+      };
+    };
+  };
+  _createdAt: string;
+}
+
 export default function GalleryPage() {
-  const [galleryItems, setGalleryItems] = useState<any[]>([]);
-const [filteredItems, setFilteredItems] = useState<any[]>([]);
-const [activeFilter, setActiveFilter] = useState('all');;
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
+  const [filteredItems, setFilteredItems] = useState<GalleryItem[]>([]);
+  const [activeFilter, setActiveFilter] = useState('all');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const lightboxRef = useRef(null);
+  const lightboxRef = useRef<HTMLDivElement>(null);
 
   // Fetch gallery items from Sanity
-// Fetch gallery items from Sanity
-useEffect(() => {
-  const fetchGalleryItems = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      
-      const query = `*[_type == "gallery"] | order(_createdAt desc) {
-        _id,
-        title,
-        category,
-        description,
-        image {
-          asset-> {
-            _id,
-            url,
-            metadata {
-              dimensions
+  useEffect(() => {
+    const fetchGalleryItems = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        const query = `*[_type == "gallery"] | order(_createdAt desc) {
+          _id,
+          title,
+          category,
+          description,
+          image {
+            asset-> {
+              _id,
+              url,
+              metadata {
+                dimensions
+              }
             }
-          }
-        },
-        _createdAt
-      }`;
-      
-      const items = await client.fetch(query);
-      setGalleryItems(items || []);
-      setFilteredItems(items || []);
-      
-    } catch (error) {
-      console.error('❌ Error fetching gallery items:', error);
-      setError(error instanceof Error ? error.message : 'An unknown error occurred');
-    } finally {
-      setLoading(false);
-    }
-  };
+          },
+          _createdAt
+        }`;
+        
+        const items = await client.fetch(query);
+        setGalleryItems(items || []);
+        setFilteredItems(items || []);
+        
+      } catch (error) {
+        console.error('❌ Error fetching gallery items:', error);
+        setError(error instanceof Error ? error.message : 'An unknown error occurred');
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  fetchGalleryItems();
-}, []);
+    fetchGalleryItems();
+  }, []);
+
   // Handle scroll effect for header
   useEffect(() => {
     const handleScroll = () => {
@@ -94,42 +111,35 @@ useEffect(() => {
   }, [filteredItems]);
 
   // Handle keyboard navigation for lightbox
-// Handle keyboard navigation for lightbox
-useEffect(() => {
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (!lightboxOpen) return;
-    
-    if (e.key === 'Escape') {
-      closeLightbox();
-    } else if (e.key === 'ArrowLeft') {
-      navigateLightbox(-1);
-    } else if (e.key === 'ArrowRight') {
-      navigateLightbox(1);
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightboxOpen) return;
+      
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        navigateLightbox(-1);
+      } else if (e.key === 'ArrowRight') {
+        navigateLightbox(1);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen, currentImageIndex, filteredItems]);
+
+  const handleFilter = (filter: string) => {
+    setActiveFilter(filter);
+    if (filter === 'all') {
+      setFilteredItems(galleryItems);
+    } else {
+      const filtered = galleryItems.filter(item => item.category === filter);
+      setFilteredItems(filtered);
     }
   };
 
-  document.addEventListener('keydown', handleKeyDown);
-  return () => document.removeEventListener('keydown', handleKeyDown);
-}, [lightboxOpen, currentImageIndex, filteredItems]);
-
-const handleFilter = (filter: string) => {
-  setActiveFilter(filter);
-  if (filter === 'all') {
-    setFilteredItems(galleryItems);
-  } else {
-    const filtered = galleryItems.filter(item => item.category === filter);
-    setFilteredItems(filtered);
-  }
-};
-
-const handleLightboxClick = (e: React.MouseEvent<HTMLDivElement>) => {
-  if (e.target === lightboxRef.current) {
-    closeLightbox();
-  }
-};
-
-  const getCategoryDisplayName = (category) => {
-    const categoryMap = {
+  const getCategoryDisplayName = (category: string): string => {
+    const categoryMap: { [key: string]: string } = {
       'food': 'Food & Beverage',
       'customer': 'Customer Snapshots'
     };
@@ -137,7 +147,7 @@ const handleLightboxClick = (e: React.MouseEvent<HTMLDivElement>) => {
   };
 
   // Function to generate image URL
-  const getImageUrl = (image, width = 800) => {
+  const getImageUrl = (image: any, width: number = 800): string | null => {
     if (!image?.asset) return null;
     try {
       return urlFor(image).width(width).url();
@@ -148,23 +158,27 @@ const handleLightboxClick = (e: React.MouseEvent<HTMLDivElement>) => {
   };
 
   // Lightbox functions
-  const openLightbox = (index) => {
+  const openLightbox = (index: number): void => {
     setCurrentImageIndex(index);
     setLightboxOpen(true);
     document.body.style.overflow = 'hidden';
   };
 
-  const closeLightbox = () => {
+  const closeLightbox = (): void => {
     setLightboxOpen(false);
     document.body.style.overflow = 'auto';
   };
 
-  const navigateLightbox = (direction) => {
+  const navigateLightbox = (direction: number): void => {
     const newIndex = (currentImageIndex + direction + filteredItems.length) % filteredItems.length;
     setCurrentImageIndex(newIndex);
   };
 
-
+  const handleLightboxClick = (e: React.MouseEvent<HTMLDivElement>): void => {
+    if (e.target === lightboxRef.current) {
+      closeLightbox();
+    }
+  };
 
   const currentLightboxItem = filteredItems[currentImageIndex];
 
