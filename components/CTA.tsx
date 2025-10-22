@@ -99,38 +99,7 @@ export default function CTA() {
           Experience the perfect blend of nature and culinary artistry at Aloy Restaurant. Nestled between the majestic Hanthana mountains and the serene Mahaweli River, our location offers breathtaking views and an unforgettable dining atmosphere.
         </p>
 
-        <div className="fade-in grid grid-cols-1 md:grid-cols-3 gap-[30px] max-w-[1000px] mx-auto mb-[50px]">
-          {[
-            { icon: 'sun', title: 'Sunset Dining', desc: 'Witness spectacular sunsets over the river with our exclusive riverside seating' },
-            { icon: 'leaf', title: 'Garden Seating', desc: 'Al fresco dining in our beautifully landscaped gardens surrounded by nature' },
-            { icon: 'wine', title: 'Riverside Bar', desc: 'Enjoy handcrafted mocktails and premium spirits by the water\'s edge' }
-          ].map((feature, index) => (
-            <div
-              key={index}
-              className="bg-white/15 backdrop-blur-[15px] p-[35px_25px] rounded-[20px] border border-white/25 transition-all duration-400 text-center relative overflow-hidden group before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[3px] before:bg-accent-gradient before:scale-x-0 before:transition-transform before:duration-400 hover:-translate-y-2 hover:bg-white/20 hover:border-gold hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:before:scale-x-100"
-            >
-              <div className="w-20 h-20 bg-accent-gradient rounded-full flex items-center justify-center mx-auto mb-5 shadow-[0_8px_20px_rgba(182,147,91,0.3)]">
-                {feature.icon === 'sun' && (
-                  <svg className="w-9 h-9 text-[#111]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                )}
-                {feature.icon === 'leaf' && (
-                  <svg className="w-9 h-9 text-[#111]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clipRule="evenodd" />
-                  </svg>
-                )}
-                {feature.icon === 'wine' && (
-                  <svg className="w-9 h-9 text-[#111]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 8h6m-5 0a3 3 0 110 6H9l3 7-3-7m1-13h6m-6 0V3m6 5V3m-3 15h.01" />
-                  </svg>
-                )}
-              </div>
-              <h4 className="font-playfair mb-[15px] text-2xl text-cream">{feature.title}</h4>
-              <p className="text-cream leading-[1.6] opacity-90">{feature.desc}</p>
-            </div>
-          ))}
-        </div>
+
 
         <div className="fade-in flex gap-5 justify-center mb-[60px] flex-wrap">
           <a href="/contact" className="bg-gold text-[#111] px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-[10px] text-lg shadow-[0_8px_20px_rgba(182,147,91,0.4)] hover:bg-hover hover:-translate-y-[3px] hover:shadow-[0_12px_25px_rgba(182,147,91,0.5)]">
