@@ -13,9 +13,7 @@ const experiences = [
     title: 'Exclusive Buffet Experience',
     description: 'Enjoy a lively buffet with fresh Western and Sri Lankan dishes. Perfect for groups, it blends variety, flavor, and ambiance for a memorable dining experience.',
     features: [
-      'Private 30-guest dinner reservations available.',
-      'Freshly prepared dishes to satisfy every palate.',
-      'Private 30-guest picnic lunch reservations available'
+      
     ],
     images: {
       main: '../assets/Buf1.jpg',
