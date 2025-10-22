@@ -147,16 +147,18 @@ export default function GalleryPage() {
   };
 
   // Function to generate image URL
-  const getImageUrl = (image: any, width: number = 800): string | null => {
-    if (!image?.asset) return null;
-    try {
-      return urlFor(image).width(width).url();
-    } catch (error) {
-      console.error('Error generating image URL:', error);
-      return null;
-    }
-  };
-
+// Function to generate image URL
+const getImageUrl = (image: any, width: number = 800): string | null => {
+  if (!image?.asset) return null;
+  try {
+    const imageUrl = urlFor(image);
+    if (!imageUrl) return null;
+    return imageUrl.width(width).url();
+  } catch (error) {
+    console.error('Error generating image URL:', error);
+    return null;
+  }
+};
   // Lightbox functions
   const openLightbox = (index: number): void => {
     setCurrentImageIndex(index);
