@@ -11,50 +11,50 @@ export default function GalleryPage() {
   const [filteredItems, setFilteredItems] = useState([]);
   const [activeFilter, setActiveFilter] = useState('all');
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const lightboxRef = useRef(null);
 
   // Fetch gallery items from Sanity
-  useEffect(() => {
-    const fetchGalleryItems = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        
-        const query = `*[_type == "gallery"] | order(_createdAt desc) {
-          _id,
-          title,
-          category,
-          description,
-          image {
-            asset-> {
-              _id,
-              url,
-              metadata {
-                dimensions
-              }
+// Fetch gallery items from Sanity
+useEffect(() => {
+  const fetchGalleryItems = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      const query = `*[_type == "gallery"] | order(_createdAt desc) {
+        _id,
+        title,
+        category,
+        description,
+        image {
+          asset-> {
+            _id,
+            url,
+            metadata {
+              dimensions
             }
-          },
-          _createdAt
-        }`;
-        
-        const items = await client.fetch(query);
-        setGalleryItems(items || []);
-        setFilteredItems(items || []);
-        
-      } catch (error) {
-        console.error('❌ Error fetching gallery items:', error);
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+          }
+        },
+        _createdAt
+      }`;
+      
+      const items = await client.fetch(query);
+      setGalleryItems(items || []);
+      setFilteredItems(items || []);
+      
+    } catch (error) {
+      console.error('❌ Error fetching gallery items:', error);
+      setError(error instanceof Error ? error.message : 'An unknown error occurred');
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchGalleryItems();
-  }, []);
-
+  fetchGalleryItems();
+}, []);
   // Handle scroll effect for header
   useEffect(() => {
     const handleScroll = () => {
