@@ -16,7 +16,6 @@ const MapComponent = dynamic(() => import('@/components/MapComponent'), {
   )
 });
 
-// EmailJS configuration - Replace with your actual credentials
 const EMAILJS_SERVICE_ID = 'service_g93hebn';
 const EMAILJS_TEMPLATE_ID = 'template_ezbd3us';
 const EMAILJS_USER_ID = '0dC8U10tkq7mtNRcK';
@@ -27,6 +26,12 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [submitMessage, setSubmitMessage] = useState('');
+
+  // Exact coordinates for Aloy Restaurant in Getambe, Peradeniya
+  const restaurantCoords = {
+    lat: 7.2906,
+    lng: 80.6337
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -152,17 +157,27 @@ export default function Contact() {
         (position) => {
           const userLat = position.coords.latitude;
           const userLng = position.coords.longitude;
-          const restaurantLat = 7.2906;
-          const restaurantLng = 80.6337;
           
-          window.open(`https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${userLat},${userLng};${restaurantLat},${restaurantLng}`, '_blank');
+          // Open Google Maps with directions to exact location
+          window.open(
+            `https://www.google.com/maps/dir/${userLat},${userLng}/Aloy+Restaurant,+Getambe,+Peradeniya/@${restaurantCoords.lat},${restaurantCoords.lng},17z/`,
+            '_blank'
+          );
         },
         () => {
-          window.open('https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=7.2906,80.6337', '_blank');
+          // If location access is denied, open map to restaurant location
+          window.open(
+            `https://www.google.com/maps?q=Aloy+Restaurant,+Getambe,+Peradeniya&ll=${restaurantCoords.lat},${restaurantCoords.lng}&z=17`,
+            '_blank'
+          );
         }
       );
     } else {
-      window.open('https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=7.2906,80.6337', '_blank');
+      // Fallback: open Google Maps to restaurant location
+      window.open(
+        `https://www.google.com/maps?q=Aloy+Restaurant,+Getambe,+Peradeniya&ll=${restaurantCoords.lat},${restaurantCoords.lng}&z=17`,
+        '_blank'
+      );
     }
   };
 
@@ -424,37 +439,123 @@ export default function Contact() {
                 </ul>
               </div>
 
-              <div className="fade-in delay-3 bg-white/5 rounded-2xl p-8 border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-[#B6935B] hover:shadow-xl relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#B6935B] to-[#E3C785] scale-y-0 transition-transform duration-400 hover:scale-y-100"></div>
-                <h3 className="font-playfair text-2xl text-[#F5F2E8] mb-6 flex items-center gap-3">
-                  <i className="fas fa-info-circle text-[#B6935B] text-xl"></i>
-                  Response Time
-                </h3>
-                <div className="space-y-3 text-[#B0B0B0]">
-                  <p>We strive to respond to all inquiries within:</p>
-                  <ul className="space-y-2 ml-4">
-                    <li className="flex items-center gap-2">
-                      <i className="fas fa-clock text-[#B6935B] text-sm"></i>
-                      <span><strong>2-4 hours</strong> during business hours</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <i className="fas fa-clock text-[#B6935B] text-sm"></i>
-                      <span><strong>12 hours</strong> for after-hours inquiries</span>
-                    </li>
-                  </ul>
-                  <p className="text-sm mt-4">For urgent reservations, please call us directly.</p>
+             
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-16 bg-gradient-to-b from-[#181818] to-[#1a1a1a]">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-playfair text-3xl md:text-4xl text-[#F5F2E8] mb-4">Find Us</h2>
+            <p className="text-[#B0B0B0] max-w-2xl mx-auto text-lg">
+              Visit us at our convenient location in Getambe, Peradeniya. We're easily accessible and offer ample parking.
+            </p>
+          </div>
+
+          {/* Interactive Map */}
+          <div className="fade-in bg-white/5 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+{/* Embedded Google Map */}
+<div className="w-full h-[500px] rounded-xl overflow-hidden shadow-lg">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1978.8597429129904!2d80.6055332!3d7.2727272!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae368c1a7f465db%3A0x9303b519c0562657!2sAloy%20Restaurant%20(Pvt)%20Ltd.!5e0!3m2!1sen!2slk!4v1761109133074!5m2!1sen!2slk"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen={true}
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+
+
+            
+            {/* Map Controls */}
+            <div className="p-6 bg-white/5 border-t border-white/10">
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div className="flex items-center gap-3 text-[#B0B0B0]">
+                  <i className="fas fa-map-marker-alt text-[#B6935B]"></i>
+                  <span className="text-sm">Exact location marked on map with Google Maps pin</span>
+                </div>
+                <button 
+                  onClick={handleGetDirections}
+                  className="px-6 py-3 bg-[#B6935B] text-[#111] rounded-xl font-semibold hover:bg-[#E3C785] transition-all duration-300 flex items-center gap-2 whitespace-nowrap"
+                >
+                  <i className="fas fa-directions"></i>
+                  Open in Google Maps
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Location Details */}
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="fade-in delay-1 bg-white/5 rounded-2xl p-8 border border-white/10">
+              <h3 className="font-playfair text-2xl text-[#F5F2E8] mb-6 flex items-center gap-3">
+                <i className="fas fa-location-dot text-[#B6935B] text-xl"></i>
+                Location Details
+              </h3>
+              <div className="space-y-4 text-[#B0B0B0]">
+                <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
+                  <i className="fas fa-building text-[#B6935B] mt-1"></i>
+                  <div>
+                    <p className="font-semibold text-[#F5F2E8]">Business Name</p>
+                    <p>Aloy Restaurant (Pvt) Ltd.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
+                  <i className="fas fa-map-location-dot text-[#B6935B] mt-1"></i>
+                  <div>
+                    <p className="font-semibold text-[#F5F2E8]">Address</p>
+                    <p>7JF4+3VR, Getambe<br />Peradeniya, Sri Lanka</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
+                  <i className="fas fa-location-crosshairs text-[#B6935B] mt-1"></i>
+                  <div>
+                    <p className="font-semibold text-[#F5F2E8]">Coordinates</p>
+                    <p>{restaurantCoords.lat}° N, {restaurantCoords.lng}° E</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="fade-in delay-2 bg-white/5 rounded-2xl p-8 border border-white/10">
+              <h3 className="font-playfair text-2xl text-[#F5F2E8] mb-6 flex items-center gap-3">
+                <i className="fas fa-road text-[#B6935B] text-xl"></i>
+                Getting Here
+              </h3>
+              <div className="space-y-4 text-[#B0B0B0]">
+                <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
+                  <i className="fas fa-car text-[#B6935B] mt-1"></i>
+                  <div>
+                    <p className="font-semibold text-[#F5F2E8]">By Car</p>
+                    <p className="text-sm">Located in Getambe, easily accessible from Peradeniya Road with ample parking space</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
+                  <i className="fas fa-bus text-[#B6935B] mt-1"></i>
+                  <div>
+                    <p className="font-semibold text-[#F5F2E8]">Public Transport</p>
+                    <p className="text-sm">Regular bus services available to Getambe from Kandy and Peradeniya</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
+                  <i className="fas fa-taxi text-[#B6935B] mt-1"></i>
+                  <div>
+                    <p className="font-semibold text-[#F5F2E8]">Taxi/Three-wheeler</p>
+                    <p className="text-sm">Easily reachable by taxi or three-wheeler from anywhere in Kandy</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Rest of your existing Map Section and Footer */}
-      {/* ... (Keep the existing Map Section code) ... */}
-
       <Footer />
-
+      
       {/* Custom styles */}
       <style jsx global>{`
         /* Style the dropdown options */
