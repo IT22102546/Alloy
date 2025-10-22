@@ -31,15 +31,13 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      fields: [
-        defineField({
-          name: 'alt',
-          title: 'Alt Text',
-          type: 'string',
-          description: 'Important for SEO and accessibility'
-        })
-      ],
       validation: (Rule) => Rule.required()
+    }),
+    defineField({
+      name: 'alt',
+      title: 'Alt Text',
+      type: 'string',
+      description: 'Important for SEO and accessibility'
     }),
     defineField({
       name: 'description',
@@ -56,7 +54,7 @@ export default defineType({
     },
     prepare(selection) {
       const { title, category, media } = selection
-      const categoryTitles = {
+      const categoryTitles: { [key: string]: string } = {
         food: 'Food & Beverage',
         customer: 'Customer Snapshots'
       }
