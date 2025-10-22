@@ -17,8 +17,8 @@ const menuCards = [
     topic: 'Signature Dishes',
     description: 'Chef\'s specialties blending local flavors with global inspiration.',
     bulletPoints: [
-      'Includes juicy burgers, crispy chips, and Sri Lankan specialties.',
-      'Crafted with fresh, seasonal ingredients for rich, balanced flavor.'
+      'Succulent grilled chicken breast drizzled with a rich red wine rosemary jus, paired with fragrant coconut corn rice and a vibrant crunchy mixed vegetable salad.',
+      'Grilled Sea food Enrich with Prawn Kabab / Cuttle fish Crabs Fish Coat with &amp; Lemon butter sauce'
     ],
     image: './assets/SignatureDishes.jpg'
   },
@@ -76,9 +76,9 @@ export default function MenuExperience() {
           {menuCards.map((card, index) => (
             <div
               key={index}
-              className={`fade-in ${index === 1 ? 'delay-1' : index === 2 ? 'delay-2' : ''} bg-gradient-to-b from-white/[0.02] to-white/[0.01] rounded-2xl overflow-hidden transition-all duration-400 border border-white/5 relative h-[450px] hover:-translate-y-[15px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-gold/30 group`}
+              className={`fade-in ${index === 1 ? 'delay-1' : index === 2 ? 'delay-2' : ''} bg-gradient-to-b from-white/[0.02] to-white/[0.01] rounded-2xl overflow-hidden transition-all duration-400 border border-white/5 relative h-[550px] hover:-translate-y-[15px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-gold/30 group`}
             >
-              <div className="h-[200px] overflow-hidden">
+              <div className="h-[250px] overflow-hidden">
                 <img
                   src={card.image}
                   alt={card.topic}

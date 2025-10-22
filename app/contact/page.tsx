@@ -45,9 +45,9 @@ export default function Contact() {
       const currentMinute = now.getMinutes();
       const currentTime = currentHour + (currentMinute / 60);
       
-      // Restaurant is open from 11:30 to 22:00
-      const openTime = 11.5; // 11:30
-      const closeTime = 22; // 22:00
+      // Restaurant is open from 11:00 to 16:00 (4:00 PM)
+      const openTime = 11; // 11:00 AM
+      const closeTime = 16; // 4:00 PM
       
       setIsOpen(currentTime >= openTime && currentTime < closeTime);
     };
@@ -187,7 +187,7 @@ export default function Contact() {
       
       {/* Hero Section */}
       <section 
-        className="min-h-[70vh] relative flex items-center justify-center text-center bg-cover bg-center" 
+        className="min-h-[100vh] relative flex items-center justify-center text-center bg-cover bg-center" 
         style={{
           backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assets/ContBanner.jpg)'
         }}
@@ -422,11 +422,9 @@ export default function Contact() {
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    { day: 'Monday - Thursday', time: '11:30 AM - 10:00 PM' },
-                    { day: 'Friday - Saturday', time: '11:30 AM - 11:00 PM' },
-                    { day: 'Sunday', time: '11:30 AM - 10:00 PM' },
-                    { day: 'Lunch Service', time: '11:30 AM - 3:00 PM' },
-                    { day: 'Dinner Service', time: '6:00 PM - 10:30 PM' }
+                    { day: 'Monday - Sunday', time: '11:00 AM - 4:00 PM' },
+                    { day: 'Breakfast Service', time: '11:00 AM - 12:00 PM' },
+                    { day: 'Lunch Service', time: '12:00 PM - 4:00 PM' }
                   ].map((schedule, index) => (
                     <li 
                       key={index}
@@ -437,6 +435,14 @@ export default function Contact() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-4 p-3 bg-white/5 rounded-lg border border-white/10">
+                  <div className="flex items-center gap-2 text-sm">
+                    <i className={`fas ${isOpen ? 'fa-check-circle text-green-400' : 'fa-times-circle text-red-400'}`}></i>
+                    <span className={isOpen ? 'text-green-400' : 'text-red-400'}>
+                      {isOpen ? 'We are currently open' : 'We are currently closed'}
+                    </span>
+                  </div>
+                </div>
               </div>
 
              
@@ -457,20 +463,18 @@ export default function Contact() {
 
           {/* Interactive Map */}
           <div className="fade-in bg-white/5 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-{/* Embedded Google Map */}
-<div className="w-full h-[500px] rounded-xl overflow-hidden shadow-lg">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1978.8597429129904!2d80.6055332!3d7.2727272!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae368c1a7f465db%3A0x9303b519c0562657!2sAloy%20Restaurant%20(Pvt)%20Ltd.!5e0!3m2!1sen!2slk!4v1761109133074!5m2!1sen!2slk"
-    width="100%"
-    height="100%"
-    style={{ border: 0 }}
-    allowFullScreen={true}
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-  ></iframe>
-</div>
-
-
+            {/* Embedded Google Map */}
+            <div className="w-full h-[500px] rounded-xl overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1978.8597429129904!2d80.6055332!3d7.2727272!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae368c1a7f465db%3A0x9303b519c0562657!2sAloy%20Restaurant%20(Pvt)%20Ltd.!5e0!3m2!1sen!2slk!4v1761109133074!5m2!1sen!2slk"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
             
             {/* Map Controls */}
             <div className="p-6 bg-white/5 border-t border-white/10">
