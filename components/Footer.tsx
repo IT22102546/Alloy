@@ -16,9 +16,9 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 pt-2">
               {[
-                { icon: 'facebook', href: '#' },
-                { icon: 'instagram', href: '#' },
-                { icon: 'tripadvisor', href: '#' },
+                { icon: 'facebook', href: 'https://www.facebook.com/aloy.restaurants.kandy' },
+                { icon: 'instagram', href: 'https://www.instagram.com/aloyrestaurant?utm_source=qr&igsh=MWZ0Z2J3MGhyenhsNQ==' },
+                { icon: 'tripadvisor', href: 'https://www.tripadvisor.com/Restaurant_Review-g304138-d3315211-Reviews-Aloy_Restaurant-Kandy_Kandy_District_Central_Province.html' },
               ].map((social, index) => (
                 <a
                   key={index}
