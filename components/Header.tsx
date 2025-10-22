@@ -29,7 +29,7 @@ export default function Header() {
     { href: "/about", label: "About" },
     { href: "#menu", label: "Menu" }, 
     { href: "/experience", label: "Experiences" },
-    { href: "#gallery", label: "Gallery" },
+    { href: "/gallery", label: "Gallery" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -73,7 +73,7 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
-              <a href="#reservations" className="bg-[#B6935B] text-[#111] px-6 py-3 rounded-[10px] font-semibold border-none cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(182,147,91,0.3)] hover:bg-[#E3C785] hover:-translate-y-[3px] hover:shadow-[0_6px_18px_rgba(182,147,91,0.4)]">
+              <a href="/contact" className="bg-[#B6935B] text-[#111] px-6 py-3 rounded-[10px] font-semibold border-none cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(182,147,91,0.3)] hover:bg-[#E3C785] hover:-translate-y-[3px] hover:shadow-[0_6px_18px_rgba(182,147,91,0.4)]">
                 Reservations
               </a>
             </nav>
@@ -151,7 +151,7 @@ export default function Header() {
               {/* Reservations Button in Mobile Menu */}
               <div className="mb-8">
                 <a 
-                  href="#reservations" 
+                  href="/contact" 
                   className="w-full bg-[#B6935B] text-[#111] px-6 py-4 rounded-xl font-semibold border-none cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(182,147,91,0.3)] hover:bg-[#E3C785] hover:-translate-y-1 hover:shadow-[0_6px_18px_rgba(182,147,91,0.4)] flex items-center justify-center gap-2 text-center"
                   onClick={closeMobileMenu}
                 >

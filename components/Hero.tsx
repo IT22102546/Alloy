@@ -38,10 +38,10 @@ export default function Hero() {
           Riverside Dining • Scenic Views
         </p>
         <h1 className="fade-in delay-1 font-playfair text-6xl mb-6 leading-[1.1]">
-          Culinary experience rooted in Western and Authentic tradition and scenic beauty in the heart of Kandy
+          Authentic Western cuisine amid Kandy’s scenic charm
         </h1>
         <p className="fade-in delay-2 text-xl text-cream mb-10 max-w-[700px] mx-auto">
-          To be Sri Lanka's most cherished culinary destination for international travelers, offering Western cuisine and authentic local flavors with world-class hospitality.
+          Sri Lanka’s premier culinary haven for global travelers, blending Western fare and authentic local flavors
         </p>
         <div className="fade-in delay-3 flex gap-4 justify-center mb-10 flex-wrap">
           <a href="#menu" className="bg-gold text-[#111] px-6 py-3 rounded-[10px] font-semibold border-none cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(182,147,91,0.3)] hover:bg-hover hover:-translate-y-[3px] hover:shadow-[0_6px_18px_rgba(182,147,91,0.4)]">
