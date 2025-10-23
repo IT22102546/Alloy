@@ -8,7 +8,6 @@ export default function Footer() {
           {/* Restaurant Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3 mb-4">
-              
               <h3 className="font-playfair text-xl text-cream">Aloy Restaurant</h3>
             </div>
             <p className="text-cream/70 text-sm leading-relaxed">
@@ -103,11 +102,11 @@ export default function Footer() {
             <h3 className="font-playfair text-lg text-cream mb-4">Quick Links</h3>
             <ul className="list-none space-y-2">
               {[
-                { text: 'Our Menu', href: '#menu' },
-                { text: 'About Us', href: '#about' },
-                { text: 'Gallery', href: '#gallery' },
-                { text: 'Contact', href: '#contact' },
-                { text: 'Reservations', href: '#reservations' }
+                { text: 'Our Menu', href: '/#menu' },
+                { text: 'About Us', href: '/about' },
+                { text: 'Gallery', href: '/gallery' },
+                { text: 'Contact', href: '/contact' },
+                { text: 'Reservations', href: '/contact' }
               ].map((link, index) => (
                 <li key={index}>
                   <a href={link.href} className="text-cream/70 text-sm transition-all duration-300 flex items-center gap-2 hover:text-[#B6935B] hover:pl-2 py-1 group">
@@ -133,7 +132,14 @@ export default function Footer() {
             
             <div className="flex items-center gap-2 text-cream/60 text-sm">
               <span>Designed & Developed by</span>
-              <span className="text-[#B6935B] font-semibold">KaralliyaddaOne</span>
+              <a 
+                href="https://karalliyaddaone.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#B6935B] font-semibold hover:text-cream transition-colors duration-300"
+              >
+                KaralliyaddaOne
+              </a>
               <svg className="w-4 h-4 text-[#B6935B]" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
               </svg>
